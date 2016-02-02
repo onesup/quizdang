@@ -1,0 +1,23 @@
+<div class="question-detail-action">
+  <div class="list-block votes">
+    <%= link_to vote_question_path(question, type: 'up'), class: 'external', remote: true, method: :post, data: { disable_with: '...' } do %>
+      <i class="ti-thumb-up <%= 'highlight' if question.upvoted_by?(current_user) %>"></i>
+    <% end %>
+
+    <span class="votes-points"><%= question.votes.to_i %></span>
+
+    <%= link_to vote_question_path(question, type: 'down'), class: 'external', remote: true, method: :post, data: { disable_with: '...' } do %>
+      <i class="ti-thumb-down <%= 'highlight' if question.downvoted_by?(current_user) %>"></i>
+    <% end %>
+  </div>
+
+  <div class="list-block favorite-and-share">
+    <%= link_to favorite_question_path(question), class: 'external', remote: true, method: :post, data: { disable_with: '...' } do %>
+      <i class="ti-star <%= 'highlight' if question.favorited_by?(current_user) %>"></i> <span>즐겨찾기</span>
+    <% end %>
+
+    <a href="#" class="share-button">
+      <i class="ti-share"></i> <span>공유</span>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+.participants {
+  &.show {
+    .question-card {
+      margin: 0px;
+    }
+
+    .user {
+      .list-block {
+        margin: 0px;
+
+        .item-inner {
+          .item-title {
+            font-size: 14px;
+          }
+
+          .item-subtitle {
+            font-size: 12px;
+          }
+
+          .item-after {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .question-answers {
+      .new-answer {
+        margin-top: 0px;
+        overflow: hidden;
+
+        textarea {
+          font-size: 14px;
+        }
+
+        input[type="submit"] {
+          margin-top: 10px;
+          float: right;
+          width: auto;
+        }
+      }
+    }
+
+    .question-comments {
+      .new-comment {
+        margin-top: 0px;
+        overflow: hidden;
+
+        textarea {
+          font-size: 14px;
+        }
+
+        input[type="submit"] {
+          margin-top: 10px;
+          float: right;
+          width: auto;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<section class="content-header">
+  <h1>
+    <%= Quiz %>
+    <small><%= @question.quiz.title %></small>
+  </h1>
+
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to admin_root_path do %>
+        <i class="fa fa-dashboard"></i> Home
+      <% end %>
+    </li>
+
+    <li class="active"><%= Quiz %></li>
+  </ol>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-primary">
+        <div class="box-header">
+          <h3 class="box-title">Edit
+            <small><%= @question.quiz.title %></small>
+          </h3>
+        </div>
+
+        <%= render 'form' %>
+      </div>
+    </div>
+  </div>
+</section>

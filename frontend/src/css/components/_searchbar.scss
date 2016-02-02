@@ -1,0 +1,7 @@
+.searchbar-hidden {
+  display: none;
+}
+
+.page > .searchbar-hidden ~ .page-content {
+  padding-top: 44px !important;
+}

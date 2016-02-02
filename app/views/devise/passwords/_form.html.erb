@@ -1,0 +1,40 @@
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <div class="login-screen-title login">Welcome at Quizdang</div>
+
+  <div class="content-block login">
+    <p class="intro">Forgot your password?</p>
+  </div>
+
+  <div class="list-block">
+    <ul>
+      <li class="item-content">
+        <div class="item-inner">
+          <div class="item-input">
+            <%= f.input_field :email, required: true, autofocus: true %>
+            <%= f.error :email %>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="separator login1"></div>
+
+  <div class="content-block submit">
+    <%= f.button :submit, "Send me reset password instructions", class: 'button button-big button-round email', data: { disable_with: 'Saving...' } %>
+  </div>
+
+  <div class="list-block">
+    <div class="list-block-label">
+      <%# 계정을 만들면 서비스 약관 및 개인정보 보호정책에 동의하는 것으로 간주합니다. %>
+      이미 가입하셨나요?
+
+      <%= link_to "로그인", new_session_path(resource_name) %><br />
+      <%= link_to "회원가입", new_registration_path(resource_name) %>
+    </div>
+  </div>
+
+  <div class="content-block button-connect">
+    <%= link_to "회원가입", new_registration_path(resource_name), class: "button button-big button-round email" %>
+    <%= link_to "로그인", new_session_path(resource_name), class: "button button-big button-round email" %>
+  </div>
+<% end %>

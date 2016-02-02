@@ -1,0 +1,6 @@
+ko:
+  tickets:
+    success: 관리자에게 이메일을 보냈습니다.^^
+
+    index:
+      description: 관리자에게 이메일 보내기

@@ -1,0 +1,13 @@
+app/assets/javascripts/i18n
+public/assets
+vendor/*
+changelog.md
+
+frontend/tmp/
+frontend/node_modules/
+frontend/bower_components/
+frontend/dist/
+frontend/www/
+
+frontend/plugins/
+frontend/platforms/

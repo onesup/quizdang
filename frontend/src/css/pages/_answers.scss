@@ -1,0 +1,18 @@
+.comments {
+  &.edit {
+    .edit_comment {
+      overflow: hidden;
+
+      textarea {
+        font-size: 14px;
+      }
+
+      input[type="submit"] {
+        margin-top: 10px;
+        /* float: right; */
+        /* width: auto; */
+      }
+    }
+  }
+}
+

@@ -1,0 +1,25 @@
+<div class="footer">
+  <ul>
+    <li>
+      <i class="ti-time"></i> <span><%= time_ago_in_words(question.created_at) %></span>
+    </li>
+
+    <li>
+      <span><%= link_to question.user.name, question.user %></span>
+    </li>
+  </ul>
+
+  <div class="right vote-action">
+    <a>
+      <i class="ti-eye"></i> <span><%= question.views_count %></span>
+    </a>
+
+    <a>
+      <i class="ti-heart"></i> <span><%= question.votes.to_i %></span>
+    </a>
+
+    <a>
+      <i class="ti-user"></i> <span><%= question.participants_value.to_i %></span>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+ko:
+  site_name: "퀴즈당 (Quizdang)"
+  brand_name: "퀴즈당"
+
+  home: 홈
+
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 1시간 전
+        other: '%{count}시간 전'
+      about_x_months:
+        one: 1달 전
+        other: '%{count}달 전'
+      about_x_years:
+        one: 1년 전
+        other: '%{count}년 전'
+      almost_x_years:
+        one: 1년 이하
+        other: ! '%{count}년 이하'
+      half_a_minute: 30초 전
+      less_than_x_minutes:
+        one: 1분 전
+        other: ! '%{count}분 전'
+      less_than_x_seconds:
+        one: 1초 전
+        other: ! '%{count}초 전'
+      over_x_years:
+        one: 1년 이상
+        other: ! '%{count}년 이상'
+      x_days:
+        one: 하루 전
+        other: ! '%{count}일 전'
+      x_minutes:
+        one: 1분
+        other: ! '%{count}분 전'
+      x_months:
+        one: 1달
+        other: ! '%{count}달 전'
+      x_seconds:
+        one: 1초
+        other: ! '%{count}초 전'
+
+  enumerize:
+    question:
+      multiple_choice:
+        type_name: '다중선택'
+        type_description: '응답의 범주를 지정하여 그 속에서 응답자가 하나를 선택할 수 있도록 값을 나열하는 퀴즈'
+      ox:
+        type_name: '양자택일'
+        type_description: '답이 O와 X로만 제시되는 퀴즈'
+      short_answer:
+        type_name: '짧은 답변'
+        type_description: '밑줄이나 공백을 두어서, 단문으로 답하는 퀴즈'
+    subdang:
+      actor: '배우'
+      book: '책' 
+      fun: '재미'
+      game: '게임'
+      health: '건강'
+      knowledge: '지식'
+      language: '언어'
+      movie: '영화'
+      music: '음악'
+      personality: '개인'
+      football: '축구'
+      baseball: '야구'
+      sport: '스포츠'
+      history: '역사'

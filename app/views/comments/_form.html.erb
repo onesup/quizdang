@@ -1,0 +1,25 @@
+<% @comment ||= Comment.new %>
+<% if @comment.persisted? %>
+  <% url = comment_path(@comment) %>
+<% else %>
+  <% url = question_comments_path(question) %>
+<% end %>
+
+<%= simple_form_for @comment, url: url, remote: true, data: { behavior: 'sign_in' } do |f| %>
+  <ul>
+    <li class="align-top">
+      <div class="item-content">
+        <div class="item-media"><i class="ti-comment-alt"></i></div>
+        <div class="item-inner">
+          <div class="item-input">
+            <%= f.input_field :text, as: :text %>
+          </div>
+        </div>
+      </div>
+
+      <%= f.error :text %>
+    </li>
+  </ul>
+
+  <%= f.button :submit, class: 'button button-fill', data: { disable_with: 'Saving...' } %>
+<% end %>

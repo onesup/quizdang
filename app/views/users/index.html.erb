@@ -1,0 +1,15 @@
+<%= render layout: 'shared/navbar' do %>
+  <%= User.model_name.human %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content">
+    <div class="content-block-title">
+      <%= t 'users.index.description' %>
+    </div>
+
+    <div class="content-block">
+      <%= render @users %>
+    </div>
+  </div>
+<% end %>

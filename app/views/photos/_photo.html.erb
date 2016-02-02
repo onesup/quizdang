@@ -1,0 +1,15 @@
+<% cache photo do %>
+  <%= content_tag :div, photo, class: "photo #{dom_id photo}" do %>
+    <%#= link_to photo.image.url(:regular), class: 'external' do %>
+      <%#= image_tag photo.image.url(:regular), width: '100%' %>
+    <%# end %>
+
+    <%= image_tag photo.image.url(:regular), width: '100%' %>
+
+    <div class="actions">
+      <%= link_to vote_photo_path(photo), class: 'external', remote: true, method: :post do %>
+        <i class="ti-heart"></i> <span class="photo-points"><%= photo.votes.to_i %></span>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

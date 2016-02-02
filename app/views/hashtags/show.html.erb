@@ -1,0 +1,36 @@
+<% content_for :metatag do %>
+  <title><%= t('site_name') %> | <%= Hashtag.model_name.human %> | <%= @hashtag.name %></title>
+  <%= tag :meta, property: "description", content: @hashtag.name %>
+  <%= tag :meta, property: "keywords", content: @hashtag.name %>
+
+  <%= tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"] %>
+  <%= tag :meta, property: "og:type", content: "website" %>
+  <%= tag :meta, property: "og:site_name", content: t('site_name') %>
+  <%= tag :meta, property: "og:title", content: @hashtag.name %>
+  <%= tag :meta, property: "og:url", content: hashtag_url(@hashtag) %>
+  <%= tag :meta, property: "og:description", content: @hashtag.name %>
+
+  <link rel="canonical" href="<%= hashtag_url(@hashtag) %>" />
+<% end %>
+
+<%= render layout: 'shared/navbar' do %>
+  #<%= @hashtag.name %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content infinite-scroll" data-distance="100">
+    <div class="masonry-container">
+      <% @hashtag.hashtaggings.each do |hashtaging| %>
+        <%= render "hashtagings/#{hashtaging.hashtaggable_partial_name}", hashtaggable: hashtaging.hashtaggable %>
+      <% end %>
+    </div>
+
+    <%= link_to_next_page @questions, '', id: 'next-page', class: 'next-page', params: { sort: params[:sort] } %>
+
+    <% if @questions.next_page %>
+      <div class="infinite-scroll-preloader">
+        <div class="preloader"></div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

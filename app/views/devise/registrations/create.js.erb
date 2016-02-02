@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  gon.isAuthenticated = <%= user_signed_in? %>;
+  App.f7.closeModal();
+  <% template = j render 'layouts/left_panel' %>
+  $('.panel-left').replaceWith('<%= template %>')
+<% else %>
+  <% template = j render 'devise/registrations/form' %>
+  $('.sign-up #<%= dom_id resource %>').replaceWith('<%= template %>');
+<% end %>

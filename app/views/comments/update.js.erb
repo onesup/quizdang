@@ -1,0 +1,8 @@
+<% if @comment.valid? %>
+  <% template = j render @comment %>
+  $('.<%= dom_id @comment %>').replaceWith('<%= template %>');
+  App.mainView.router.back();
+<% else %>
+  <% template = j render 'form' %>
+  $('#<%= dom_id @comment, :edit %>').replaceWith('<%= template %>');
+<% end %>

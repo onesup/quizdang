@@ -1,0 +1,7 @@
+<% if @ticket.persisted? %>
+  App.f7.toast('<%= t('tickets.success') %>', '<div><i class="ti-announcement"></i></div>', {}).show();
+  App.mainView.router.back();
+<% else %>
+  <% template = j render 'tickets/form' %>
+  $('.<%= dom_id @ticket %>').replaceWith('<%= template %>');
+<% end %>

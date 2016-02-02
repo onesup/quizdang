@@ -1,0 +1,20 @@
+---
+:verbose: false
+:concurrency: 5
+:pidfile: tmp/pids/sidekiq.pid
+:logfile: log/sidekiq.log
+development:
+  :host: redis://127.0.0.1:6379/0
+test:
+  :host: redis://127.0.0.1:6379/1
+staging:
+  :concurrency: 10
+  :host: redis://127.0.0.1:6379/0
+production:
+  :concurrency: 25
+  :host: redis://127.0.0.1:6379/0
+:queues:
+  - mailers
+  - high
+  - default
+  - low

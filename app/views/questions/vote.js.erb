@@ -1,0 +1,15 @@
+<% if @question.owner?(current_user) %>
+  App.f7.toast('<%= t('questions.owner') %>', '<div><i class="ti-lock"></i></div>', {}).show();
+<% else %>
+  <% template = j render 'shared/question_footer', question: @question %>
+  $('.<%= dom_id @question %> .footer').replaceWith('<%= template %>');
+
+  <% template = j render 'shared/question_detail_action', question: @question %>
+  $('.<%= dom_id @question %> .question-detail-action').replaceWith('<%= template %>');
+
+  <% if @question.upvoted_by?(current_user) %>
+    App.f7.toast('추천', '<div><i class="ti-thumb-up"></i></div>', {}).show();
+  <% elsif @question.downvoted_by?(current_user) %>
+    App.f7.toast('비추천', '<div><i class="ti-thumb-down"></i></div>', {}).show();
+  <% end %>
+<% end %>

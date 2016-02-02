@@ -1,0 +1,33 @@
+<% if flash.present? %>
+  <div class="notifications list-block media-list" style="display: block; transform: translate3d(0px, 0px, 0px);">
+    <ul>
+      <% flash.each do |key, value| %>
+        <li class="notification-item">
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">
+                  <% if key == 'alert' %>
+                    <i class="ti-alert"></i>
+                  <% elsif key == 'notice' %>
+                    <i class="ti-info-alt"></i>
+                  <% end %>
+                </div>
+
+                <div class="item-after">
+                  <a href="#" class="close-notification">
+                    <span></span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="item-text">
+                <%= value %>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

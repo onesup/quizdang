@@ -1,0 +1,46 @@
+<% content_for :metatag do %>
+  <% cache('intro/metatag') do %>
+    <title><%= t('site_name') %> | 어디서나 편하게 퀴즈</title>
+    <%= tag :meta, property: "description", content: "어디서나 편하게 퀴즈" %>
+    <%= tag :meta, property: "keywords", content: "퀴즈당, quizdang, 퀴즈, OX퀴즈, 3지선다, 질문" %>
+
+    <%= tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"] %>
+    <%= tag :meta, property: "og:type", content: "website" %>
+    <%= tag :meta, property: "og:site_name", content: t('site_name') %>
+    <%= tag :meta, property: "og:title", content: t('site_name') %>
+    <%= tag :meta, property: "og:url", content: root_url %>
+    <%= tag :meta, property: "og:description", content: "어디서나 편하게 퀴즈" %>
+    <%= tag :meta, property: "og:image", content: root_url + image_path("quizdang_logo.png") %>
+
+    <link rel="canonical" href="<%= root_url %>" />
+  <% end %>
+<% end %>
+
+<% cache('intro/navbar') do %>
+  <%= render layout: 'shared/navbar' do %>
+    <%= t('brand_name') %><sup class="highlight">베타</sup>
+  <% end %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content">
+    <%#= render partial: 'tabs' %>
+
+    <div class="content-block-title">
+      <% link = link_to root_url, data: { 'reload': true, 'ignore-cache': true } do %>
+        ( <i class="ti-reload"></i> )
+      <% end %>
+
+      <%= t 'intros.index.content_title_html', href: link %>
+    </div>
+
+    <div class="masonry-container">
+      <%= render partial: 'questions/question', collection: @questions, as: :question %>
+    </div>
+
+    <div class="content-block">
+      더 많은 퀴즈를 찾으시나요? <%= link_to '퀴즈', questions_path %>,
+      또는 <%= link_to '서브당', subdangs_path %>과 <%= link_to '해쉬태그', hashtags_path %>에서 찾을 수 있어요.
+    </div>
+  </div>
+<% end %>

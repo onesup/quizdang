@@ -1,0 +1,55 @@
+ko:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Please review the problems below:"
+
+    placeholders:
+      user:
+        name: '이름'
+        username: '아이디'
+        email: '이메일'
+        password: '비밀번호'
+        password_confirmation: '비밀번호 재확인'
+      question:
+        text: '퀴즈 내용을 입력해주세요.'
+      multiple_choice:
+        text: '다음 도시 중 과거에 수도였던 적이 없는 도시는?'
+      ox:
+        text: '윔블던 대회는 세계에서 가장 오랜 역사를 가진 국제 테니스 대회이다'
+      short_answer:
+        text: '마라톤 경기는 기원전 490년 마라톤 평원에서 벌어진 아테네와 페르시아의 전투를 기념하기 위해 만들어졌습니다. 때문에 페르시아의 후예인 이 나라에서는 마라톤을 금지한다고 합니다. 어느 나라일까요?'
+      answer:
+        text: '퀴즈에 대한 설명이 아니면 삭제될 수 있어요.'
+      comment:
+        text: '댓글로 추가 의견을 나눠보세요.'
+      ticket:
+        details: '문의 사항이나 서비스에 대한 피드백을 적어주세요.'
+        email_address: '연락받으실 이메일 주소'
+
+    # Examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+    # include_blanks:
+    #   defaults:
+    #     age: 'Rather not say'
+    # prompts:
+    #   defaults:
+    #     age: 'Select your age'

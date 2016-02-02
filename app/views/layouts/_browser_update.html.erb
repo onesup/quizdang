@@ -1,0 +1,24 @@
+<% cache('browser-update') do %>
+  <script>
+    var $buoop = {
+      c: 2,
+      reminder: 0,
+      onshow: function(infos) {
+        $('.container').addClass('browser-update');
+        ga('send', 'event', 'buorg', 'show', 'display-buorg');
+      },
+
+      onclick: function(infos) {
+        ga('send', 'event', 'buorg', 'click', 'visit-buorg');
+      }
+    };
+
+    function $buo_f(){
+      var e = document.createElement("script");
+      e.src = "//browser-update.org/update.min.js";
+      document.body.appendChild(e);
+    };
+    try {document.addEventListener("DOMContentLoaded", $buo_f, false)}
+    catch(e){window.attachEvent("onload", $buo_f)}
+  </script>
+<% end %>

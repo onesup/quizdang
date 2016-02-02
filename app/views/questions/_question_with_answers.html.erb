@@ -1,0 +1,21 @@
+<%= render 'questions/subdang_and_hashtag', question: @question %>
+
+<%= render layout: 'shared/question', locals: { question: @question } do %>
+  <div class="list-block media-list inset">
+    <ul>
+      <div class="participant">
+        <% if @participant.correct? %>
+          <span class="highlight">"<%= @participant.user_participant_text %>"</span>,
+          정답(<i class="ti-check highlight"></i>)입니다.
+        <% else %>
+          <span class="highlight">"<%= @participant.user_participant_text %>"</span>,
+          정답(<i class="ti-close highlight"></i>)이 아닙니다.
+        <% end %>
+      </div>
+
+      <%= render partial: 'participants/option', collection: @question.options %>
+    </ul>
+  </div>
+
+  <%= render 'shared/question_detail_action', question: question %>
+<% end %>

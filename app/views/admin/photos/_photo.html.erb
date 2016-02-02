@@ -1,0 +1,18 @@
+<tr>
+  <td><%= image_tag photo.image.url(:small), width: '100' %></td>
+  <td><%= photo.id %></td>
+  <td><%= %></td>
+  <td><%= photo.created_at %></td>
+  <td><%= photo.updated_at %></td>
+  <td>
+    <div class="dropdown">
+      <a class="dropdown-toggle btn btn-sm btn-flat btn-danger" data-toggle="dropdown" href="#">
+        actions
+        <b class="caret"></b>
+      </a>
+
+      <ul class="dropdown-menu">
+      </ul>
+    </div>
+  </td>
+</tr>

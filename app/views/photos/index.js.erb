@@ -1,0 +1,14 @@
+<% template = j render @photos %>
+$('.masonry-container').append('<%= template %>');
+
+<% if @photos.next_page %>
+  <% target = ".page-on-center .next-page" %>
+  $('<%= target %>').replaceWith('<%= link_to_next_page @photos, '', id: 'next-page', class: 'next-page' %>');
+<% else %>
+  // Nothing more to load, detach infinite scroll events to prevent unnecessary loadings
+  App.f7.detachInfiniteScroll(Dom7('.infinite-scroll'));
+  // Remove preloader
+  Dom7('.infinite-scroll-preloader').remove();
+<% end %>
+
+App.infiniteLoading = false;

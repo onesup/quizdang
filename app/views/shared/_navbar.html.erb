@@ -1,0 +1,29 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left sliding">
+      <%= link_to root_path, class: "back link" do %>
+        <i class="ti-angle-left"></i>
+      <% end %>
+    </div>
+
+    <div class="center sliding">
+      <%= yield %>
+    </div>
+
+    <div class="right">
+      <%= link_to guide_questions_path, class: "link icon-only" do %>
+        <i class="ti-pencil-alt"></i>
+      <% end %>
+
+      <a href="#" class="open-searchbar link icon-only">
+        <i class="ti-search"></i>
+      </a>
+
+      <a href="#" class="open-panel link icon-only">
+        <i class="ti-menu"></i>
+      </a>
+    </div>
+
+    <%#= yield :subnavbar%>
+  </div>
+</div>

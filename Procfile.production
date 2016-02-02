@@ -1,0 +1,2 @@
+/* web: bundle exec unicorn -c config/unicorn.rb -E production */
+sidekiq: bundle exec sidekiq -C config/sidekiq.yml -e production

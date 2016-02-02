@@ -1,0 +1,15 @@
+<%= render layout: 'shared/navbar' do %>
+  <%= I18n.t("enumerize.question.#{@question.question_type.underscore}.type_name") %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content">
+    <div class="question-card">
+      <div style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(<%= @question.photo.image.url(:regular) %>)">
+        <div class="body">
+          <%= render "questions/#{@question.question_type.underscore}/form" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

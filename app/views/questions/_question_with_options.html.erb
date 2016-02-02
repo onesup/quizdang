@@ -1,0 +1,9 @@
+<%= render 'questions/subdang_and_hashtag', question: question %>
+
+<%= render layout: 'shared/question', locals: { question: question } do %>
+  <div class="list-block media-list inset">
+    <%= render 'questions/participant_form', question: question %>
+  </div>
+
+  <%= render 'shared/question_detail_action', question: question %>
+<% end %>

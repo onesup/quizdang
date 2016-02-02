@@ -1,0 +1,31 @@
+<% cache('toolbar') do %>
+  <div class="toolbar tabbar tabbar-labels">
+    <div class="toolbar-inner">
+      <%= link_to '#', data: { href: root_path }, class: "tab-link" do %>
+        <i class="icon ti-home"></i><span class="tabbar-label"><%= t('home') %></span>
+      <% end %>
+
+      <%= link_to '#', data: { href: questions_path }, class: "tab-link" do %>
+        <i class="icon ti-receipt"></i><span class="tabbar-label"><%= Question.model_name.human %></span>
+      <% end %>
+
+      <%= link_to '#', data: { href: subdangs_path }, class: "tab-link" do %>
+        <i class="icon ti-clipboard"></i><span class="tabbar-label"><%= Subdang.model_name.human %></span>
+      <% end %>
+
+      <!--
+      <%= link_to '#', data: { href: users_path }, class: "tab-link" do %>
+        <i class="icon ti-cup"></i><span class="tabbar-label"><%= User.model_name.human %></span>
+      <% end %>
+      -->
+
+      <%= link_to '#', data: { href: badges_path }, class: "tab-link" do %>
+        <i class="icon ti-crown"></i><span class="tabbar-label"><%= Badge.model_name.human %></span>
+      <% end %>
+
+      <%= link_to '#', data: { href: photos_path }, class: "tab-link" do %>
+        <i class="icon ti-gallery"></i><span class="tabbar-label"><%= Photo.model_name.human %></span>
+      <% end %>
+    </div>
+  </div>
+<% end %>

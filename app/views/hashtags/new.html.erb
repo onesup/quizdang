@@ -1,0 +1,9 @@
+<%= render layout: 'shared/navbar' do %>
+  <%= Hashtag.model_name.human %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content">
+    <%= render partial: 'form' %>
+  </div>
+<% end %>

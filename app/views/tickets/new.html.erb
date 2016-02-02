@@ -1,0 +1,13 @@
+<%= render layout: 'shared/navbar' do %>
+  <%= Ticket.model_name.human %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content">
+    <div class="content-block">
+      <%= t 'tickets.index.description' %>
+    </div>
+
+    <%= render 'form' %>
+  </div>
+<% end %>

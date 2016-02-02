@@ -1,0 +1,12 @@
+<%= content_tag :li, class: "app-#{dom_class badge}" do %>
+  <%= link_to badge, class: "item-link item-content" do %>
+    <div class="item-inner">
+      <div class="item-title-row">
+        <div class="item-title"><%= t(".#{badge.slug}.name") %></div>
+        <div class="item-after"><%= badge.badge_count %>회</div>
+      </div>
+      <div class="item-subtitle"></i><%= t(".level.#{badge.level}.name_html") %></div>
+      <div class="item-text"><%= t(".#{badge.slug}.description_html") %></div>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,8 @@
+<% if @user.valid? %>
+  App.mainView.router.back();
+  <% template = j render 'layouts/left_panel' %>
+  $('.panel-left').replaceWith('<%= template %>')
+<% else %>
+  <% template = j render 'form' %>
+  $('#<%= dom_id @user, :edit %>').replaceWith('<%= template %>');
+<% end %>

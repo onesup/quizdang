@@ -1,0 +1,37 @@
+# set path to application
+working_directory "<%= current_path %>"
+
+# Set unicorn options
+worker_processes <%= unicorn_workers %>
+preload_app true
+timeout 30
+
+# Set up socket location
+listen "/tmp/unicorn.<%= application %>.sock", backlog: 64
+
+# Logging
+stderr_path "<%= shared_path %>/log/unicorn.stderr.log"
+stdout_path "<%= shared_path %>/log/unicorn.stdout.log"
+
+# Set master PID location
+pid "<%= unicorn_pid %>"
+
+before_fork do |server, worker|
+  defined?(ActiveRecord::Base) and ActiveRecord::Base.connection.disconnect!
+  defined?(RedisStore.redis) and RedisStore.redis.quit
+
+  # Quit the old unicorn process
+  old_pid = "<%= shared_path %>/tmp/pids/unicorn.pid.oldbin"
+  if old_pid != server.pid
+    begin
+    sig = (worker.nr + 1) >= server.worker_processes ? :QUIT : :TTOU
+    Process.kill(sig, File.read(old_pid).to_i)
+    rescue Errno::ENOENT, Errno::ESRCH
+    end
+  end
+end
+
+after_fork do |server, worker|
+  defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_connection
+  defined?(RedisStore.redis) and RedisStore.redis.client.reconnect
+end

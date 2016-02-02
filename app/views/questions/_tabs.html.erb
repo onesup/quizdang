@@ -1,0 +1,7 @@
+<div class="content-block sort-tabs">
+  <div class="buttons-row">
+    <%= link_to '새로운', questions_path(sort: 'newly'), class: "#{'active' if params[:sort] == 'newly' || params[:sort].blank? } button no-animation" %>
+    <%= link_to '추천', questions_path(sort: 'votes'), class: "#{'active' if params[:sort] == 'votes'} button no-animation" %>
+    <%= link_to '인기있는', questions_path(sort: 'hot'), class: "#{'active' if params[:sort] == 'hot'} button no-animation" %>
+  </div>
+</div>

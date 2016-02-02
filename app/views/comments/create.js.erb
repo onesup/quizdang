@@ -1,0 +1,10 @@
+<% if @comment.persisted? %>
+  <% template = j render @comment %>
+  $('.<%= dom_id(@comment.commentable) %> .comments').append('<%= template %>');
+  //App.util.scrollTo('#<%= dom_id @comment %>', 800, -50);
+  $('#new_comment textarea').val('');
+  $('#new_comment .help-block').remove();
+<% else %>
+  <% template = j render 'comments/form', question: @commentable %>
+  $('#<%= dom_id @comment %>').replaceWith('<%= template %>');
+<% end %>

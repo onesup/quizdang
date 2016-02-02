@@ -1,0 +1,8 @@
+<% if @answer.valid? %>
+  <% template = j render @answer %>
+  $('.<%= dom_id @answer %>').replaceWith('<%= template %>');
+  App.mainView.router.back();
+<% else %>
+  <% template = j render 'form' %>
+  $('#<%= dom_id @answer, :edit %>').replaceWith('<%= template %>');
+<% end %>

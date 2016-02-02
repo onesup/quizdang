@@ -1,0 +1,30 @@
+<%= render layout: 'shared/navbar' do %>
+  @<%= @user.name %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content infinite-scroll" data-distance="100">
+    <%= render 'users/user', user: @user %>
+
+    <div class="content-block sort-tabs">
+      <div class="buttons-row">
+        <%= link_to '만든', user_path(@user, filter: 'author'), class: "#{'active' if params[:filter] == 'author' || params[:filter].blank? } button no-animation" %>
+        <%= link_to '참여한', user_path(@user, filter: 'participant'), class: "#{'active' if params[:filter] == 'participant'} button no-animation" %>
+        <%= link_to '즐겨찾기', user_path(@user, filter: 'favorite'), class: "#{'active' if params[:filter] == 'favorite'} button no-animation" %>
+        <%#= link_to '추천한', user_path(@user, filter: 'vote'), class: "#{'active' if params[:filter] == 'vote'} button no-animation" %>
+      </div>
+    </div>
+
+    <div class="masonry-container">
+      <%= render partial: 'questions/question', collection: @questions, as: :question %>
+    </div>
+
+    <%= link_to_next_page @questions, '', id: 'next-page', class: 'next-page', params: { filter: params[:filter] } %>
+
+    <% if @questions.next_page %>
+      <div class="infinite-scroll-preloader">
+        <div class="preloader"></div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

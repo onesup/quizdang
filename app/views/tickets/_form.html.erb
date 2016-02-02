@@ -1,0 +1,39 @@
+<%= simple_form_for @ticket, remote: true do |f| %>
+  <div class="list-block inset">
+    <ul>
+      <li>
+        <div class="item-content">
+          <div class="item-inner">
+            <div class="item-input">
+              <%= f.input_field :details %>
+              <%= f.error :details %>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="list-block inset">
+    <ul>
+      <li>
+        <div class="item-content">
+          <div class="item-inner">
+            <div class="item-input">
+              <%= f.input_field :email_address, as: :email %>
+              <%= f.error :email_address %>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="list-block inset">
+    <ul>
+      <li>
+        <%= f.button :submit, class: 'button button-big button-fill', data: { disable_with: 'Saving...' } %>
+      </li>
+    </ul>
+  </div>
+<% end %>

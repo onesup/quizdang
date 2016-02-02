@@ -1,0 +1,6 @@
+<% if @hashtag.persisted? %>
+  App.mainView.router.loadPage('<%= hashtag_path(@hashtag) %>');
+<% else %>
+  <% template = j render 'form' %>
+  $('#<%= dom_id @hashtag %>').replaceWith('<%= template %>');
+<% end %>

@@ -1,0 +1,28 @@
+<%= simple_form_for [:admin, @quiz], html: { multipart: true } do |f| %>
+  <div class="box-body">
+    <%= render "shared/error_messages", object: @quiz %>
+
+    <%= f.input :title %>
+    <%= f.input :description, as: :text %>
+
+    <%= f.input :featured_image, as: :file do %>
+      <%= f.file_field :featured_image %>
+      <%= f.hidden_field :featured_image_cache %>
+
+      <% if @quiz.featured_image? %>
+        <div>
+          <%= image_tag(@quiz.featured_image.url(:small)) %>
+
+          <label>
+            <%= f.check_box :remove_featured_image %>
+            Remove
+          </label>
+        </div>
+      <% end %>
+    <% end %>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  </div>
+<% end %>

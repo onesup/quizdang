@@ -1,0 +1,6 @@
+ko:
+  hashtags:
+    index:
+      # description: 관심있는 태그를 검색 또는 선택하세요.
+      description_html: 관심있는 태그를 검색, 선택 또는 %{href} 있습니다. 만드신
+        태그가 승인되면 태그 운영자로 등록됩니다.

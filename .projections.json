@@ -1,0 +1,78 @@
+{
+  "app/services/*_service.rb": {
+    "command": "service",
+    "alternate": "services/%_service.rb"
+  },
+  "app/serializers/*_serializer.rb": {
+    "command": "serializer",
+    "alternate": "policies/%_serializer.rb"
+  },
+  "app/policies/*_policy.rb": {
+    "command": "policy",
+    "alternate": "policies/%s_policy.rb"
+  },
+  "app/uploaders/*_uploader.rb": {
+    "command": "uploader",
+    "alternate": "uploaders/%s_uploader.rb"
+  },
+  "app/controllers/api/v3/*_controller.rb": {
+    "command": "apicontroller",
+    "alternate": "spec/controllers/api/v3/%s_controller_spec.rb",
+    "template": "class Api::V3::%SController < ApplicationController\n  respond_to :json\nend"
+  },
+  "frontend/app/router.js": {
+    "command": "jinitializer"
+  },
+  "frontend/app/adapters/*.js": {
+    "command": "jadapter",
+    "alternate": "spec/javascripts/models/%s_spec.js.coffee",
+    "template": "App.%S = DS.Model.extend({"
+  },
+  "frontend/app/components/*.js": {
+    "command": "jcomponent",
+    "alternate": "spec/javascripts/routes/%s_spec.js",
+    "template": "App.%SRoute = Ember.Route.extend({"
+  },
+  "frontend/app/controllers/*.js": {
+    "command": "jcontroller",
+    "alternate": "spec/javascripts/controllers/%s_spec.js",
+    "template": "App.%SController = Ember.Controller.extend({"
+  },
+  "frontend/app/helpers/*.js": {
+    "command": "jhelper",
+    "alternate": "spec/javascripts/controllers/%s_spec.js",
+    "template": "App.%SController = Ember.Controller.extend({"
+  },
+  "frontend/app/mixins/*.js": {
+    "command": "jmixin",
+    "alternate": "spec/javascripts/mixins/%s_spec.js",
+    "template": "App.%S = Ember.Mixin.create({"
+  },
+  "frontend/app/models/*.js": {
+    "command": "jmodel",
+    "alternate": "spec/javascripts/models/%s_spec.js.coffee",
+    "template": "App.%S = DS.Model.extend({"
+  },
+  "frontend/app/routes/*.js": {
+    "command": "jroute",
+    "alternate": "spec/javascripts/routes/%s_spec.js",
+    "template": "App.%SRoute = Ember.Route.extend({"
+  },
+  "frontend/app/serializers/*.js": {
+    "command": "jserializer",
+    "alternate": "spec/javascripts/routes/%s_spec.js",
+    "template": "App.%SRoute = Ember.Route.extend({"
+  },
+  "frontend/app/services/*.js": {
+    "command": "jservice",
+    "alternate": "spec/javascripts/routes/%s_spec.js",
+    "template": "App.%SRoute = Ember.Route.extend({"
+  },
+  "frontend/app/templates/*.hbs": {
+    "command": "jtemplate"
+  },
+  "spec/javascripts/**/*_spec.js.coffee": {
+    "command": "jspec",
+    "alternate": "app/assets/javascripts/%s.coffee"
+  }
+}

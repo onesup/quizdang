@@ -1,0 +1,37 @@
+<%= content_tag :div, id: "#{dom_id question}", class: "#{dom_id question} question-card", style: "background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(#{question.photo.image.url(:regular)})" do %>
+  <div class="header">
+    <%= yield :subdang_and_hashtag %>
+
+    <div class="more-action <%= 'moderater' if policy(question).update? %> right">
+      <i class="ti-more-alt"></i>
+      <%= link_to 'share', question_url(question), class: 'action share-action' %>
+      <%= link_to embed_question_url(question), class: 'action embed-action' do %>
+        <div class="list-block">
+          <ul>
+            <li class="align-top">
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-input">
+                    <%= text_area_tag 'embed', "<iframe src=#{embed_question_url(question)} width=384px height=550px frameborder=0></iframe>" %>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+      <%= link_to 'edit', [:edit, question], class: 'action edit-action' %>
+      <%= link_to 'destroy', question_path(question), class: 'action destroy-action' %>
+    </div>
+  </div>
+
+  <div class="body list-block">
+    <h2><%= link_to RubyPants.new(question.text).to_html.html_safe, question_path(question), class: 'text' %></h2>
+  </div>
+
+  <div class="content">
+    <%= yield %>
+  </div>
+
+  <%= render 'shared/question_footer', question: question %>
+<% end %>

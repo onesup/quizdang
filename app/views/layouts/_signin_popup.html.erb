@@ -1,0 +1,17 @@
+<% cache('signin-popup') do %>
+  <div class="popup signin-popup">
+    <div class="view view-popup">
+      <a href="#" class="link close-popup">
+        <i class="ti-close"></i>
+      </a>
+
+      <div class="pages">
+        <div data-page="sign-in" class="page sign-in">
+          <div class="page-content login-screen-content">
+            <%= render 'devise/sessions/form' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

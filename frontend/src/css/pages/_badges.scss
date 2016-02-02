@@ -1,0 +1,40 @@
+.badges {
+  .app-badge {
+    [class^="ti-"], [class*=" ti-"] {
+      margin-right: 5px;
+      color: #ff3b30;
+    }
+
+    .bronze {
+      color: brown;
+    }
+
+    .silver {
+      color: silver;
+    }
+
+    .gold {
+      color: gold;
+    }
+  }
+
+  &.index {
+    .item-after {
+      .important {
+        color: #ff3b30;
+      }
+    }
+  }
+
+  &.show {
+    .list-block {
+      margin: 5px 5px;
+    }
+
+    .content-block-title {
+      .important {
+        color: #ff3b30;
+      }
+    }
+  }
+}

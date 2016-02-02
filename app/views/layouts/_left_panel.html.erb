@@ -1,0 +1,138 @@
+<div class="panel panel-left panel-cover layout-dark">
+  <% if user_signed_in? %>
+    <div class="content-block-title">로그인 상태</div>
+    <div class="list-block media-list current_user">
+      <ul>
+        <li>
+          <%= link_to current_user, class: "item-link item-content close-panel" do %>
+            <%= render 'shared/user', user: current_user %>
+          <% end %>
+        </li>
+
+        <li>
+          <div class="item-content">
+            <div class="item-media">
+            </div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">
+                  <%= link_to '수정', edit_user_path(current_user), class: "close-panel", data: { 'ignore-cache' => true } %>
+                </div>
+
+                <div class="item-after">
+                  <%= link_to '로그아웃', destroy_user_session_path, method: :delete %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="content-block-title">링크</div>
+  <div class="list-block">
+    <ul>
+      <li>
+        <%= link_to root_path, class: "item-link close-panel" do %>
+          <div class="item-content">
+            <div class="item-media"><i class="icon ti-home"></i></div>
+            <div class="item-inner">
+              <div class="item-title"><%= t('home') %></div>
+            </div>
+          </div>
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to questions_path, class: "item-link close-panel" do %>
+          <div class="item-content">
+            <div class="item-media"><i class="icon ti-receipt"></i></div>
+            <div class="item-inner">
+              <div class="item-title"><%= Question.model_name.human %></div>
+            </div>
+          </div>
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to subdangs_path, class: "item-link close-panel" do %>
+          <div class="item-content">
+            <div class="item-media"><i class="icon ti-clipboard"></i></div>
+            <div class="item-inner">
+              <div class="item-title"><%= Subdang.model_name.human %></div>
+            </div>
+          </div>
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to users_path, class: "item-link close-panel" do %>
+          <div class="item-content">
+            <div class="item-media"><i class="icon ti-cup"></i></div>
+            <div class="item-inner">
+              <div class="item-title"><%= User.model_name.human %></div>
+            </div>
+          </div>
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to badges_path, class: "item-link close-panel" do %>
+          <div class="item-content">
+            <div class="item-media"><i class="icon ti-crown"></i></div>
+            <div class="item-inner">
+              <div class="item-title"><%= Badge.model_name.human %></div>
+            </div>
+          </div>
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to photos_path, class: "item-link close-panel" do %>
+          <div class="item-content">
+            <div class="item-media"><i class="icon ti-gallery"></i></div>
+            <div class="item-inner">
+              <div class="item-title"><%= Photo.model_name.human %></div>
+            </div>
+          </div>
+        <% end %>
+      </li>
+
+      <!--
+      <li>
+        <%= link_to hashtags_path, class: "item-link close-panel" do %>
+          <div class="item-content">
+            <div class="item-media"><i class="icon ti-package"></i></div>
+            <div class="item-inner">
+              <div class="item-title"><%= Hashtag.model_name.human %></div>
+            </div>
+          </div>
+        <% end %>
+      </li>
+      -->
+
+      <li>
+        <%= link_to current_user || '#', class: "item-link close-panel", data: { behavior: 'sign_in' } do %>
+          <div class="item-content">
+            <div class="item-media"><i class="icon ti-user"></i></div>
+            <div class="item-inner">
+              <div class="item-title">나</div>
+            </div>
+          </div>
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to new_ticket_path, class: "item-link close-panel" do %>
+          <div class="item-content">
+            <div class="item-media"><i class="icon ti-help-alt"></i></div>
+            <div class="item-inner">
+              <div class="item-title">문의하기</div>
+            </div>
+          </div>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

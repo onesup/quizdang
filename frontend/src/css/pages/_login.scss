@@ -1,0 +1,115 @@
+.signin-popup {
+  .close-popup {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    font-size: 20px;
+    color: white;
+    z-index: 1;
+  }
+}
+
+.sign-in, .sign-up {
+  .page-content.login-screen-content {
+    background-color: #171616;
+  }
+
+  .login-screen-title.login {
+    color: white;
+    font-weight: 300;
+    padding: 15px 24px;
+    max-width: 255px;
+    margin: 85px auto;
+  }
+
+  .content-block.login {
+    max-width: 135px;
+    text-align: center;
+  }
+
+  .content-block.submit {
+    width: 300px;
+    margin-top: 50px;
+  }
+
+  .content-block.button-connect {
+    /* margin-top: 130px; */
+  }
+
+  p.intro {
+    margin-top: -95px;
+  }
+
+  a.button.button-big.button-round.facebook {
+    width: 85%;
+    margin: 20px auto;
+    background-color: #3e549c;
+    border: 1px solid #3e549c;
+    font-size: 14px;
+    color: white;
+    line-height: 32px;
+    height: 35px;
+  }
+
+  a.button.button-big.button-round.email, input[type="submit"].button.button-big.button-round.email {
+    width: 85%;
+    margin: 20px auto;
+    border: 1px solid #777;
+    font-size: 14px;
+    color: white;
+    line-height: 32px;
+    height: 35px;
+  }
+
+  a.button.button-big.button-round.email.active-state {
+    width: 85%;
+    margin: 20px auto;
+    border: 1px solid #60BB87;
+    font-size: 14px;
+    background-color: #60BB87;
+    color: white;
+    line-height: 32px;
+    height: 35px;
+  }
+
+  /* -----------------------------------*/
+  /* ---------->>> LOGIN 1 <<<-----------*/
+  /* -----------------------------------*/
+  input {
+    font-size: 14px !important;
+    text-align: center;
+    color: white !important;
+  }
+
+  input.active-state {
+    color: #777;
+  }
+
+  .help-block {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    text-align: center;
+    color: #ff3b30;
+  }
+
+  .separator.login1 {
+    border-bottom: #777 1px solid;
+    width: 250px;
+    margin: -28px auto;
+  }
+
+  .list-block.login {
+    margin-top: 35px;
+  }
+
+  .done {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  a.done {
+    color: #f8df64;
+    font-size: 14px;
+  }
+}

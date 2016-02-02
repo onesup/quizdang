@@ -1,0 +1,33 @@
+<% content_for :metatag do %>
+  <% cache('hashtags/metatag') do %>
+    <title><%= t('site_name') %> | <%= Hashtag.model_name.human %></title>
+    <%= tag :meta, property: "description", content: Hashtag.all.limit(6).pluck(:name).join(',') %>
+    <%= tag :meta, property: "keywords", content: Hashtag.all.limit(6).pluck(:name).join(',') %>
+
+    <%= tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"] %>
+    <%= tag :meta, property: "og:type", content: "website" %>
+    <%= tag :meta, property: "og:site_name", content: t('site_name') %>
+    <%= tag :meta, property: "og:title", content: Hashtag.model_name.human %>
+    <%= tag :meta, property: "og:url", content: hashtags_url %>
+    <%= tag :meta, property: "og:description", content: Hashtag.model_name.human %>
+    <%#= tag :meta, property: "og:image", content: image_path("quizdang_logo.png") %>
+
+    <link rel="canonical" href="<%= hashtags_url %>" />
+  <% end %>
+<% end %>
+
+<%= render layout: 'shared/navbar' do %>
+  <%= Hashtag.model_name.human %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content">
+    <div class="content-block">
+      <p><%= t 'hashtags.index.description_html', href: link_to('만들 수', new_hashtag_path) %></p>
+    </div>
+
+    <div class="content-block">
+      <%= render @hashtags %>
+    </div>
+  </div>
+<% end %>

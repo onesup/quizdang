@@ -1,0 +1,45 @@
+<%= content_for :title, 'About Us - Custom page title' %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content">
+    <div class="content-page">
+      <div class="content-block">
+        <h2>What is reputation? How do I earn (and lose) it?</h2>
+        <div id="help-post-body" class="col-section"><p>Reputation is a rough measurement of how much the community trusts you; it is earned by convincing your peers that you know what you’re talking about. Basic use of the site, including asking questions, answering, and suggesting edits, does not require any reputation at all. But the more reputation you earn, the more <a href="/privileges">privileges</a> you gain.</p>
+
+          <p>The primary way to gain reputation is by posting good questions and useful answers. Votes on these posts cause you to gain (or sometimes lose) reputation. Please note that votes for posts marked “community wiki” do not generate any reputation.</p>
+
+          <p>You can earn a maximum of 200 reputation per day from any combination of the activities below. <a href="/helpcenter/bounty">Bounty awards</a>, <a href="/helpcenter/accepted-answer">accepted answers</a>, and <a href="http://blog.stackoverflow.com/2009/07/cross-site-account-associations/">association bonuses</a> are not subject to the daily reputation limit.</p>
+
+          <p><b>You gain reputation when:</b></p>
+
+          <ul>
+            <li>question is voted up: +5</li>
+            <li>answer is voted up: +10</li>
+            <li>answer is marked “accepted”: +15 (+2 to acceptor) </li>
+            <li>suggested edit is accepted: +2 (up to +1000 total per user) </li>
+            <li>bounty awarded to your answer: + full bounty amount</li>
+            <li>one of your answers is awarded a bounty automatically: + half of the bounty amount (<a href="/helpcenter/bounty">see more details about how bounties work</a>) </li>
+            <li>site association bonus: +100 on each site (awarded a maximum of one time per site) </li>
+          </ul>
+
+          <p>If you are an experienced Stack Exchange network user with 200 or more reputation on at least one site, you will receive a starting +100 reputation bonus to get you past basic new user restrictions. This will happen automatically on all current Stack Exchange sites where you have an account, and on any other Stack Exchange sites at the time you log in.</p>
+
+          <p><b>You lose reputation when:</b></p>
+
+          <ul>
+            <li>your question is voted down: −2</li>
+            <li>your answer is voted down: −2</li>
+            <li>you vote down an answer: −1</li>
+            <li>you place a bounty on a question: − full bounty amount</li>
+            <li>one of your posts receives 6 spam or offensive flags: −100</li>
+          </ul>
+
+          <p>All users start with one reputation point, and reputation can never drop below 1. Accepting your own answer does not gain you any reputation. If a user reverses a vote, the corresponding reputation loss or gain will be reversed as well. Vote reversal as a result of voting fraud will also return lost or gained reputation.</p>
+
+          <p>At the high end of this reputation spectrum there is little difference between users with high reputation and ♦ moderators. That is intentional. We don’t run this site. The community does.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

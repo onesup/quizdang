@@ -1,0 +1,6 @@
+ko:
+  intros:
+    index:
+      content_title_html: 무작위로 선택한 탑50 퀴즈. 다시 선택할까요? %{href}
+      title:
+        html: <b>title!</b>

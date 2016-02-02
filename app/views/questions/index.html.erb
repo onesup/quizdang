@@ -1,0 +1,42 @@
+<% content_for :metatag do %>
+  <title><%= t('site_name') %> | 어디서나 편하게 퀴즈</title>
+  <%= tag :meta, property: "description", content: "어디서나 편하게 퀴즈" %>
+  <%= tag :meta, property: "keywords", content: "퀴즈당, quizdang, 퀴즈, OX퀴즈, 3지선다, 질문" %>
+
+  <%= tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"] %>
+  <%= tag :meta, property: "og:type", content: "website" %>
+  <%= tag :meta, property: "og:site_name", content: t('site_name') %>
+  <%= tag :meta, property: "og:title", content: t('site_name') %>
+  <%= tag :meta, property: "og:url", content: questions_url %>
+  <%= tag :meta, property: "og:description", content: "어디서나 편하게 퀴즈" %>
+  <%#= tag :meta, property: "og:image", content: questions_url + image_path("quizdang_logo.png") %>
+
+  <link rel="canonical" href="<%= questions_url %>" />
+<% end %>
+
+<%= render layout: 'shared/navbar' do %>
+  <%= t "#{controller_name}.#{action_name}.page_name" %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content pull-to-refresh-content infinite-scroll" data-ptr-distance="55" data-distance="100">
+    <div class="pull-to-refresh-layer">
+      <div class="preloader"></div>
+      <div class="pull-to-refresh-arrow"></div>
+    </div>
+
+    <%= render partial: 'tabs' %>
+
+    <div class="masonry-container">
+      <%= render partial: 'questions/question', collection: @questions, as: :question %>
+    </div>
+
+    <%= link_to_next_page @questions, '', id: 'next-page', class: 'next-page' %>
+
+    <% if @questions.next_page %>
+      <div class="infinite-scroll-preloader">
+        <div class="preloader"></div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

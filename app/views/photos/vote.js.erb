@@ -1,0 +1,8 @@
+<% template = j render @photo %>
+$('.<%= dom_id @photo %>').replaceWith('<%= template %>');
+
+<% if @photo.voted_by?(current_user) %>
+  App.f7.toast('좋아요', '<div><i class="ti-heart"></i></div>', {}).show();
+<% else %>
+  App.f7.toast('', '<div><i class="ti-heart-broken"></i></div>', {}).show();
+<% end %>

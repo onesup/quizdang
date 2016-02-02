@@ -1,0 +1,68 @@
+
+	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="512" height="512" viewBox="0 0 100 100">
+
+		<defs>
+			<linearGradient id="Gradient_1" gradientUnits="userSpaceOnUse" x1="50" y1="53" x2="50" y2="0" spreadMethod="pad">
+<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+
+<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.4"/>
+</linearGradient><linearGradient id="Gradient_2" gradientUnits="userSpaceOnUse" x1="100" y1="50" x2="0" y2="50" spreadMethod="pad">
+<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+
+<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.4"/>
+</linearGradient><linearGradient id="Gradient_3" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50" spreadMethod="pad">
+<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+
+<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.4"/>
+</linearGradient><g id="background">
+<path fill="url(#background-gradient)" stroke="none" d=" M 0 0 L 0 100 100 100 100 0 0 0 Z"/>
+</g><mask id="mask">
+<path fill="#FFFFFF" stroke="none" d=" M 0 0 L 0 100 100 100 100 0 0 0 Z"/>
+</mask><g id="gloss-top">
+<path fill="url(#Gradient_1)" stroke="none" d=" M 100 53.1 L 100 0 0 0 0 53.1 100 53.1 Z"/>
+</g><g id="gloss-right">
+<path fill="url(#Gradient_2)" stroke="none" d=" M 100 100 L 100 0 0 0 100 100 Z"/>
+</g><g id="gloss-left">
+<path fill="url(#Gradient_3)" stroke="none" d=" M 0 0 L 0 100 100 0 0 0 Z"/>
+</g>
+			
+	<linearGradient id="background-gradient" x1="0" y1="0" y2="1" x2="0" >
+		<stop stop-color="#ff3b30" offset="0%"/>
+		<stop stop-color="#ff3b30" offset="100%"/>
+	</linearGradient>
+
+			
+			
+			<g transform="scale(1.1111110169210632) translate(-4.999996185302734 -5)" id="picture"><path d="M18.026 5c-1.947 0-3.552 1.605-3.552 3.553v16.58c0 1.946 1.605 3.55 3.552 3.55h16.58c1.947 0 3.552-1.604 3.552-3.55V8.553c0-1.95-1.605-3.553-3.553-3.553h-16.58zm0 2.368h16.58c.676 0 1.183.508 1.183 1.185v16.58c0 .675-.51 1.183-1.19 1.183H18.02c-.674 0-1.182-.508-1.182-1.184V8.552c0-.676.51-1.184 1.184-1.184zm14.988 4.104c-.303 0-.605.114-.837.346l-7.536 7.538-4.18-4.188c-.463-.464-1.21-.464-1.674 0-.463.463-.463 1.21 0 1.674l5.025 5.026c.348.348.854.433 1.28.26.144-.06.28-.144.395-.26l8.37-8.375c.465-.464.465-1.21 0-1.675-.23-.23-.533-.346-.836-.346zm14.618 3.002c-1.313 0-2.37 1.056-2.37 2.368 0 1.312 1.057 2.37 2.37 2.37h35.526c1.312 0 2.368-1.058 2.368-2.37s-1.056-2.368-2.368-2.368H47.632zM18.026 38.158c-1.947 0-3.552 1.605-3.552 3.553v16.58c0 1.95 1.605 3.558 3.552 3.558h16.58c1.947 0 3.552-1.605 3.552-3.553V41.71c0-1.947-1.605-3.552-3.553-3.552h-16.58zm0 2.368h16.58c.676 0 1.183.508 1.183 1.185v16.58c0 .68-.51 1.19-1.19 1.19H18.02c-.674 0-1.182-.51-1.182-1.185V41.71c0-.676.51-1.184 1.184-1.184zm29.606 7.106c-1.313 0-2.37 1.056-2.37 2.368 0 1.312 1.057 2.368 2.37 2.368h35.526c1.312 0 2.368-1.056 2.368-2.368 0-1.312-1.056-2.368-2.368-2.368H47.632zM18.026 71.316c-1.947 0-3.552 1.605-3.552 3.552v16.58c0 1.947 1.605 3.552 3.552 3.552h16.58c1.947 0 3.552-1.605 3.552-3.553v-16.58c0-1.946-1.605-3.55-3.553-3.55h-16.58zm0 2.368h16.58c.676 0 1.183.508 1.183 1.184v16.58c0 .676-.51 1.184-1.19 1.184H18.02c-.674 0-1.182-.508-1.182-1.185v-16.58c0-.675.51-1.183 1.184-1.183zm29.606 7.106c-1.313 0-2.37 1.056-2.37 2.368 0 1.312 1.057 2.368 2.37 2.368h35.526c1.312 0 2.368-1.056 2.368-2.368 0-1.312-1.056-2.368-2.368-2.368H47.632z"/></g>
+			
+	<linearGradient id="picture-gradient" x1="0" y1="0" y2="1" x2="0" >
+		<stop stop-color="#ffffff" offset="0%"/>
+		<stop stop-color="#e5eff9" offset="100%"/>
+	</linearGradient>
+
+		</defs>
+
+		
+
+			<use xlink:href="#background" fill="url(#background-gradient)" />
+
+		
+
+			<g mask="url(#mask)">
+				<g transform="
+				        translate(
+                                50 50
+)
+                            translate(0 0)  scale(0.5)  
+                            translate(
+                                -50 -50
+)">
+						<use xlink:href="#picture" fill="url(#picture-gradient)"  />
+				</g>
+			</g>
+
+		
+
+			<use xlink:href="#gloss-left" opacity="1" />
+
+	</svg>

@@ -1,0 +1,80 @@
+<% user = comment.user %>
+
+<%= content_tag :div, id: dom_id(comment), class: "#{dom_class(comment)} #{dom_id(comment) }" do %>
+  <ul class="user">
+    <li>
+      <%= link_to user, class: "item-link item-content" do %>
+        <div class="item-media">
+          <%= image_tag user.avatar.url, width: 34 %>
+        </div>
+
+        <div class="item-inner">
+          <div class="item-title-row">
+            <div class="item-title">
+              <%= user.name %>
+            </div>
+
+            <div class="item-after">
+              <%= time_ago_in_words comment.created_at %>
+            </div>
+          </div>
+
+          <div class="item-subtitle">
+            <%= user.karma.to_i %>점
+
+            <% if user.badges.gold.any? %>
+              <span><i class="ti-medall gold"></i><%= user.badges.gold.count %></span>
+            <% end %>
+
+            <% if user.badges.silver.any? %>
+              <span><i class="ti-medall silver"></i><%= user.badges.silver.count %></span>
+            <% end %>
+
+            <% if user.badges.bronze.any? %>
+              <span><i class="ti-medall bronze"></i><%= user.badges.bronze.count %></span>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </li>
+  </ul>
+
+  <ul class="content">
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-text">
+            <%= simple_format comment.text %>
+            <%#= simple_format comment.text, {}, sanitize: false %>
+          </div>
+
+          <div class="actions">
+            <ul>
+              <li>
+                <% if policy(comment).update? %>
+                  <%= link_to edit_comment_path(comment), data: { 'ignore-cache' => true } do %>
+                    <i class="ti-pencil-alt"></i> <span>수정</span>
+                  <% end %>
+                <% end %>
+              </li>
+
+              <li>
+                <% if policy(comment).destroy? %>
+                  <%= link_to comment_path(comment), class: 'external', remote: true, method: :delete, data: { disable_with: '...', confirm: '삭제하시겠습니까?' } do %>
+                    <i class="ti-trash"></i> <span>삭제</span>
+                  <% end %>
+                <% end %>
+              </li>
+            </ul>
+
+            <div class="right">
+              <%= link_to vote_comment_path(comment), class: 'external', remote: true, method: :post, data: { disable_with: '...' } do %>
+                <i class="ti-heart <%= 'highlight' if comment.voted_by?(current_user) %>"></i> <span class="votes-points"><%= comment.votes.to_i %></span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+<% end %>

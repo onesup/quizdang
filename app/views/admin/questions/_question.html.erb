@@ -1,0 +1,31 @@
+<tr>
+  <td><%= question.id %></td>
+  <td><%= link_to question.quiz.title, [:admin, question.quiz] if question.quiz %></td>
+  <td><%= link_to question.subdang.name, [:admin, question.subdang] if question.subdang%></td>
+  <td><%= question.text %></td>
+  <td>
+    <ul>
+      <% question.options.each do |option| %>
+        <li>
+          <div><%= option.text %></div>
+        </li>
+        <hr>
+      <% end %>
+    </ul>
+  </td>
+  <td><%= question.created_at %></td>
+  <td><%= question.updated_at %></td>
+  <td>
+    <div class="dropdown">
+      <a class="dropdown-toggle btn btn-sm btn-flat btn-danger" data-toggle="dropdown" href="#">
+        actions
+        <b class="caret"></b>
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><%= link_to 'Edit', edit_admin_question_path(question) %></li>
+        <li><%= link_to 'Destroy', admin_question_path(question), method: :delete, data: { confirm: 'Are you sure?'} %></li>
+      </ul>
+    </div>
+  </td>
+</tr>

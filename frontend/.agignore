@@ -1,0 +1,8 @@
+frontend/tmp/
+frontend/node_modules/
+frontend/bower_components/
+frontend/dist/
+frontend/www/
+
+frontend/plugins/
+frontend/platforms/

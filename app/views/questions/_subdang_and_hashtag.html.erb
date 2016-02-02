@@ -1,0 +1,19 @@
+<% content_for :subdang_and_hashtag do %>
+  <div class="subdang left">
+    <% if question.subdang %>
+      <%= link_to question.subdang, class: 'chip' do %>
+        <div class="chip-label">
+          <%= question.subdang.name %>
+        </div>
+      <% end %>
+    <% end %>
+
+    <% question.hashtags.each do |hashtag| %>
+      <%= link_to hashtag, class: 'chip' do %>
+        <div class="chip-label">
+          <%= "##{hashtag.name}" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

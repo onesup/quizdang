@@ -1,0 +1,66 @@
+<%= render layout: 'shared/navbar' do %>
+  <%= Quiz %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content">
+    <div class="quiz-card">
+      <div style="background-image:url(http://lorempixel.com/1000/600/nature/3/)" valign="bottom" class="card-header color-white no-border">
+        <%= @quiz.title %></br>
+        <%= @quiz.description %>
+      </div>
+    </div>
+
+    <% @quiz.questions.each do |question| %>
+      <div class="content-block-title"><%= question.text %></div>
+      <%= render 'participants/form', question: question %>
+    <% end %>
+
+    <div class="content-block-title">댓글</div>
+    <div class="list-block media-list">
+      <ul>
+        <li>
+          <label class="item-content">
+            <div class="item-media"><img src="http://lorempixel.com/160/160/fashion/1" width="40"></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Yellow Submarine</div>
+                <div class="item-after">$15</div>
+              </div>
+              <div class="item-subtitle">Beatles</div>
+              <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</div>
+            </div>
+          </label>
+        </li>
+
+        <li>
+          <label class="item-content">
+            <div class="item-media"><img src="http://lorempixel.com/160/160/fashion/2" width="40"></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Don't Stop Me Now</div>
+                <div class="item-after">$22</div>
+              </div>
+              <div class="item-subtitle">Queen</div>
+              <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</div>
+            </div>
+          </label>
+        </li>
+
+        <li>
+          <label class="item-content">
+            <div class="item-media"><img src="http://lorempixel.com/160/160/fashion/3" width="40"></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Billie Jean</div>
+                <div class="item-after">$16</div>
+              </div>
+              <div class="item-subtitle">Michael Jackson</div>
+              <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</div>
+            </div>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+<% end %>

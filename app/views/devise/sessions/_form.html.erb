@@ -1,0 +1,61 @@
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), remote: true) do |f| %>
+  <div class="login-screen-title login">로그인</div>
+
+  <div class="content-block login">
+    <p class="intro">Discover new quiz join the community</p>
+  </div>
+
+  <div class="list-block">
+    <ul>
+      <li class="item-content">
+        <div class="item-inner">
+          <div class="item-input">
+            <%= f.input_field :username %>
+            <%= f.error :username %>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="separator login1"></div>
+
+  <div class="list-block">
+    <ul>
+      <li class="item-content">
+        <div class="item-inner">
+          <div class="item-input">
+            <%= f.input_field :password, as: :password %>
+            <%= f.error :password %>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="separator login1"></div>
+
+  <div class="list-block">
+    <div class="content-block submit">
+      <%= f.input_field :remember_me, as: :hidden, value: true if devise_mapping.rememberable? %>
+      <%= f.button :submit, "로그인", class: 'button button-big button-round email', data: { disable_with: 'Saving...' } %>
+    </div>
+  </div>
+
+  <div class="list-block">
+    <div class="list-block-label">
+      처음이신가요? 여기에서 시작하세요.
+
+      <% if devise_mapping.registerable? && controller_name != 'registrations' %>
+        <%= link_to "가입하기", new_registration_path(resource_name) %><br />
+      <% end %>
+
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <%= link_to "비밀번호를 잊으셨나요?", new_password_path(resource_name) %><br />
+      <% end %>
+    </div>
+  </div>
+
+  <div class="content-block button-connect">
+    <%#= link_to "Sign up with Facebook", omniauth_authorize_path(resource_name, 'facebook'), class: "button button-big button-round facebook" %>
+    <%= link_to "회원가입", new_registration_path(resource_name), class: "button button-big button-round email" %>
+  </div>
+<% end %>

@@ -1,0 +1,50 @@
+.questions {
+  &.index {
+    .sort-tabs {
+      margin: 15px 15px;
+      padding: 0px;
+    }
+  }
+
+  &.show {
+    .question-card {
+      margin: 0px;
+    }
+
+    .user {
+      .list-block {
+        margin: 0px;
+
+        .item-inner {
+          .item-title {
+            font-size: 14px;
+          }
+
+          .item-subtitle {
+            font-size: 12px;
+          }
+
+          .item-after {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  &.new, &.edit {
+    .question-card {
+      margin: 0px;
+    }
+  }
+
+  &.embed {
+    &.page {
+      background: none;
+    }
+
+    .question-card {
+      margin: 0px;
+    }
+  }
+}

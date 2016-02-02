@@ -1,0 +1,38 @@
+<% content_for :metatag do %>
+  <title><%= t('site_name') %> | <%= Subdang.model_name.human  %> | <%= @subdang.name %></title>
+  <%= tag :meta, property: "description", content: @subdang.name %>
+  <%= tag :meta, property: "keywords", content: @subdang.name %>
+
+  <%= tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"] %>
+  <%= tag :meta, property: "og:type", content: "website" %>
+  <%= tag :meta, property: "og:site_name", content: t('site_name') %>
+  <%= tag :meta, property: "og:title", content: @subdang.name %>
+  <%= tag :meta, property: "og:url", content: subdang_url(@subdang) %>
+  <%= tag :meta, property: "og:description", content: @subdang.name %>
+  <%= tag :meta, property: "og:image", content: root_url + @subdang.featured_image.url(:regular) %>
+
+  <link rel="canonical" href="<%= subdang_url(@subdang) %>" />
+<% end %>
+
+<%= render layout: 'shared/navbar' do %>
+  <%= @subdang.name %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content infinite-scroll" data-distance="100">
+    <%= render 'subdangs/subdang', subdang: @subdang %>
+
+    <div class="content-block-title"><%= Question.model_name.human %></div>
+    <div class="masonry-container">
+      <%= render partial: 'questions/question', collection: @questions, as: :question %>
+    </div>
+
+    <%= link_to_next_page @questions, '', id: 'next-page', class: 'next-page', params: { sort: params[:sort] } %>
+
+    <% if @questions.next_page %>
+      <div class="infinite-scroll-preloader">
+        <div class="preloader"></div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

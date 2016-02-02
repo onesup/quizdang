@@ -1,0 +1,12 @@
+<% if @question.owner?(current_user) %>
+  App.f7.toast('<%= t('questions.owner') %>', '<div><i class="ti-lock"></i></div>', {}).show();
+<% else %>
+  <% template = j render 'shared/question_detail_action', question: @question %>
+  $('.<%= dom_id @question %> .question-detail-action').replaceWith('<%= template %>');
+
+  <% if @question.favorited_by?(current_user) %>
+    App.f7.toast('즐겨찾기에 추가하였습니다.', '<div><i class="ti-star"></i></div>', {}).show();
+  <% else %>
+    App.f7.toast('즐겨찾기가 해제되었습니다.', '<div><i class="ti-star"></i></div>', {}).show();
+  <% end %>
+<% end %>

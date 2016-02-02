@@ -1,0 +1,31 @@
+<% content_for :metatag do %>
+  <% cache('subdangs/metatag') do %>
+    <title><%= t('site_name') %> | <%= Subdang.model_name.human %></title>
+    <%= tag :meta, property: "description", content: Subdang.model_name.human %>
+    <%= tag :meta, property: "keywords", content: Subdang.all.limit(6).pluck(:name).join(',') %>
+
+    <%= tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"] %>
+    <%= tag :meta, property: "og:type", content: "website" %>
+    <%= tag :meta, property: "og:site_name", content: t('site_name') %>
+    <%= tag :meta, property: "og:title", content: Subdang.model_name.human %>
+    <%= tag :meta, property: "og:url", content: subdangs_url %>
+    <%= tag :meta, property: "og:description", content: Subdang.model_name.human %>
+    <%#= tag :meta, property: "og:image", content: image_path("quizdang_logo.png") %>
+
+    <link rel="canonical" href="<%= subdangs_url %>" />
+  <% end %>
+<% end %>
+
+<%= render layout: 'shared/navbar' do %>
+  <%= Subdang.model_name.human %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content">
+    <div class="content-block-title">
+      <%= t('subdangs.index.description') %>
+    </div>
+
+    <%= render @subdangs %>
+  </div>
+<% end %>

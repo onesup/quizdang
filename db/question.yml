@@ -1,0 +1,62 @@
+---
+Ox:
+- text: "윔블던 대회는 세계에서 가장 오랜 역사를 가진 국제 테니스 대회이다?"
+  subdang: 스포츠당
+  options:
+  - text: "그렇다"
+    correct: true
+  - text: "아니다"
+- text: "전지현은 2002년 대종상 여우조연상을 수상하였다?"
+  options:
+  - text: "그렇다"
+  - text: "아니다"
+    correct: true
+- text: BBC는 영국 왕으로부터 칙허장(Royal Charter)을 받아 설립된 공영성과 오랜 역사로 유명한 공영방송이다. BBC에는 상업적 광고가 전혀 없다?
+  options:
+  - text: 그렇다
+    correct: true
+  - text: 아니다
+  answer: 시청료와 프로그램 판매가 BBC의 수익원이며 상업직 광고는 아예 없다. 전 세계에서 언론의 공정성과 중립성으로 인정받는 이유 
+
+MultipleChoice:
+- text: "한국을 뜻하는 Korea는 고려에서 나온 말이다. 그러면 중국을 뜻하는 China는 어떤 나라에서 나온 말인가?"
+  subdang: 역사당
+  options:
+  - text: "진"
+    correct: true
+  - text: "명"
+  - text: "청"
+  - text: "초"
+- text: "다음 도시 중 과거에 수도였던 적이 없는 도시는?"
+  options:
+  - text: "개성"
+  - text: "공주"
+  - text: "대전"
+    correct: true
+- text: 단맛, 짠맛, 신맛, 쓴맛은 사람이 혀로 느낄 수 있는 가장 대표적인 맛이다. 그렇다면 혀로 느낄 수 없는 맛은?
+  options:
+  - text: 기름맛
+  - text: 감칠맛
+  - text: 불맛
+    correct: true
+  answer: 불맛은 쓴맛과 기름맛이 조합됨 맛
+  
+- text: '주 연령층이 중장년층인 관계로 "틀니버스"라는 신조어를 만들어낸 TV 채널은?'
+  options:
+  - text: 채널A
+  - text: TV조선
+    correct: true
+  - text: JTBC
+
+# ShortAnswer:
+# - text: "이 금속은 복어알이나 독버섯처럼 독소가 함유된 음식물에 닿으면 변색이 되어 독소 유무를 판별할 수가 있다. 이 금속과 접촉해 6분
+    # 이상 생존할 수 있는 세균은 거의 없다고 하는데, 이 금속은?"
+  # options:
+  # - text: "은"
+# - text: "마라톤 경기는 기원전 490년 마라톤 평원에서 벌어진 아테네와 페르시아의 전투를 기념하기 위해 만들어졌습니다. 때문에 페르시아의
+    # 후예인 이 나라에서는 마라톤을 금지한다고 합니다. 어느 나라일까요?"
+  # options:
+  # - text: "이란"
+# - text: "한국 최초의 여성 비행사는?"
+  # options:
+  # - text: "권기옥"

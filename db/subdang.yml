@@ -1,0 +1,41 @@
+---
+- name: 스포츠당
+  featured_image: https://images.unsplash.com/photo-1445384763658-0400939829cd?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1920&s=302971f7c5bff7116de63dadc0240447
+  children:
+  - name: 축구당
+    featured_image: https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1920&s=7016a185ad1209e945e90452d0df01c9
+  - name: 야구당
+    featured_image: https://images.unsplash.com/photo-1431817986760-7cc7fbb937b2?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1920&s=ece0888289bcb100cc2248b3a3de5899
+
+- name: 역사당
+  featured_image: https://images.unsplash.com/photo-1420824471541-fe7e0ae0baa4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1920&s=0b29693aefa19092ec9c514fac266c2d
+
+- name: 영화당
+  featured_image: https://images.unsplash.com/photo-1424223022789-26fd8f34bba2?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1920&s=5583ef0ae3d89b973946e7a53a0f42f5
+
+# - name: "스포츠"
+  # featured_image: https://images.unsplash.com/photo-1445384763658-0400939829cd?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=302971f7c5bff7116de63dadc0240447
+  # children:
+  # - name: "축구"
+    # featured_image: https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=7016a185ad1209e945e90452d0df01c9
+  # - name: "야구"
+    # status: featured
+    # featured_image: https://images.unsplash.com/8/playball.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=97aaeb9b55e540f28440d220e63ec712
+  # - name: "테니스"
+# - name: "언어"
+  # featured_image: https://images.unsplash.com/photo-1431207446535-a9296cf995b1?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=574b2530342e495927572791a3afaf48
+  # children:
+  # - name: "한글"
+  # - name: "영어"
+# - name: "역사"
+  # featured_image: https://images.unsplash.com/photo-1420824471541-fe7e0ae0baa4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=0b29693aefa19092ec9c514fac266c2d
+# - name: "영화"
+  # featured_image: https://images.unsplash.com/photo-1424223022789-26fd8f34bba2?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=5583ef0ae3d89b973946e7a53a0f42f5
+# - name: "음악"
+  # featured_image: https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=0fb194fa9ad3b2efb4f000b5baed33ce
+# - name: "지식"
+  # featured_image: https://images.unsplash.com/photo-1431608660976-4fe5bcc2112c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=2a8f846cd9079442b41ce191c69fa655
+# - name: "게임"
+  # featured_image: https://images.unsplash.com/10/wii.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=38ab2a46e8621c8c23f5e4f10dcc7017
+# - name: "재미"
+  # featured_image: https://images.unsplash.com/photo-1445633883498-7f9922d37a3f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=992642366ee31b486dd73886ed564c8d

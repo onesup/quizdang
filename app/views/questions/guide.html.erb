@@ -1,0 +1,26 @@
+<%= render layout: 'shared/navbar' do %>
+  퀴즈 올리기
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content">
+    <div class="content-block-title">퀴즈 유형</div>
+    <% Question::TYPE.each do |type| %>
+      <%= link_to new_question_path(type: type) do %>
+        <div class="splash card" style="background-image:url(<%= Photo.all.sample.image.url(:regular) %>)">
+          <div class="island">
+            <h1 class="splash--title">
+              <strong><%= I18n.t("enumerize.question.#{type.underscore}.type_name") %></strong>
+            </h1>
+
+            <h2 class="splash--subtitle">
+              <%= I18n.t("enumerize.question.#{type.underscore}.type_description") %>
+            </h2>
+
+            만들기
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

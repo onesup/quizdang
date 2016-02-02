@@ -1,0 +1,34 @@
+<% content_for :metatag do %>
+  <title><%= t('site_name') %> | <%= Badge.model_name.human %> | <%= @badge.name_text %></title>
+  <%= tag :meta, property: "description", content: @badge.description_text %>
+
+  <%= tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"] %>
+  <%= tag :meta, property: "og:type", content: "website" %>
+  <%= tag :meta, property: "og:site_name", content: t('site_name') %>
+  <%= tag :meta, property: "og:title", content: @badge.name_text %>
+  <%= tag :meta, property: "og:url", content: badge_url(@badge) %>
+  <%= tag :meta, property: "og:description", content: @badge.description_text %>
+  <%#= tag :meta, property: "og:image", content: image_path("quizdang_logo.png") %>
+
+  <link rel="canonical" href="<%= badge_url(@badge) %>" />
+<% end %>
+
+<%= render layout: 'shared/navbar' do %>
+  <%= Badge.model_name.human %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content">
+    <div class="list-block media-list">
+      <ul>
+        <%= render 'badges/badge', badge: @badge %>
+      </ul>
+    </div>
+
+    <div class="masonry-container">
+      <% @badge.badgings.each do |badging| %>
+        <%= render "badgings/#{badging.badgeable_partial_name}", badgeable: badging.badgeable %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

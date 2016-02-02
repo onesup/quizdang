@@ -1,0 +1,16 @@
+<div class="card quiz-card">
+  <%= link_to quiz do %>
+    <div style="background-image:url(http://lorempixel.com/1000/600/nature/3/)" valign="bottom" class="card-header color-white no-border">
+      <%= quiz.title %></br>
+      <%= quiz.description %>
+    </div>
+  <% end %>
+
+  <div class="card-footer">
+    <a href="#" class="link">Like</a>
+    <a href="#" class="link icon-only">
+      <i class="icon icon-form-comment"></i>
+    </a>
+    <a href="#" class="link">스냅</a>
+  </div>
+</div>

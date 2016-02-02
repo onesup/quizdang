@@ -1,0 +1,7 @@
+<div class="content-block sort-tabs">
+  <div class="buttons-row">
+    <%= link_to '추천', root_path(sort: 'votes'), class: "#{'active' if params[:sort] == 'votes'} button no-animation" %>
+    <%= link_to '인기있는', root_path(sort: 'hot'), class: "#{'active' if params[:sort] == 'hot'} button no-animation" %>
+    <%= link_to '랜덤', root_path(sort: 'newly'), class: "#{'active' if params[:sort] == 'newly'} button no-animation" %>
+  </div>
+</div>

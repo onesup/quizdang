@@ -1,0 +1,21 @@
+<% content_for :metatag do %>
+  <title><%= t('site_name') %> | <%= @question.text %></title>
+  <%= tag :meta, property: "description", content: @question.options.pluck(:text).join(' | ') %>
+  <%= tag :meta, property: "keywords", content: @question.hashtags.pluck(:name).join(',') %>
+
+  <%= tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"] %>
+  <%= tag :meta, property: "og:type", content: "website" %>
+  <%= tag :meta, property: "og:site_name", content: t('site_name') %>
+  <%= tag :meta, property: "og:title", content: @question.text %>
+  <%= tag :meta, property: "og:url", content: question_url(@question) %>
+  <%= tag :meta, property: "og:description", content: @question.options.pluck(:text).join(' | ') %>
+  <%#= tag :meta, property: "og:image", content: root_url + @question.photo.image.url(:regular) %>
+
+  <link rel="canonical" href="<%= question_url(@question) %>" />
+<% end %>
+
+<div class="pages" style="background: none;">
+  <div data-page="<%= controller_name %>-<%= action_name %>" class="page <%= controller_name %> <%= action_name %>">
+    <%= render 'questions/question_with_options', question: @question %>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="splash card" style="background-image:url(<%= hashtag.featured_image.url(:regular) %>)">
+  <div class="island">
+    <h1 class="splash--title">
+      <%= link_to hashtag do %>
+        <%= hashtag.name %>
+      <% end %>
+    </h1>
+
+    <h2 class="splash--subtitle">
+      <% hashtag.children.each do |child| %>
+        <%= link_to child.name, child %>
+      <% end %>
+    </h2>
+  </div>
+</div>

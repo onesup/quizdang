@@ -1,0 +1,21 @@
+.chip {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(0,0,0,.87);
+  background: rgba(0,0,0,.12);
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  margin: 2px 0;
+
+  &.chip-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    min-width: 0;
+  }
+}

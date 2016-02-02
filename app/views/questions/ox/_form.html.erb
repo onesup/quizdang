@@ -1,0 +1,65 @@
+<%= simple_form_for @question, remote: true do |f| %>
+  <div class="content">
+    <div class="list-block">
+      <ul>
+        <li class="item-content">
+          <div class="item-inner">
+            <div class="item-input">
+              <%= f.input_field :text, as: :text %>
+              <%= f.error :text %>
+            </div>
+          </div>
+        </li>
+
+        <%= f.simple_fields_for :options do |ff| %>
+          <li>
+            <label class="label-radio item-content">
+              <%= ff.input_field :correct, as: :boolean, boolean_style: :inline %>
+              <div class="item-inner">
+                <div class="item-title"><%= ff.object.text %></div>
+                <%= ff.hidden_field :text %>
+                <%= ff.error :text %>
+              </div>
+            </label>
+          </li>
+        <% end %>
+      </ul>
+
+      <%= f.error :options %>
+    </div>
+
+    <div class="list-block">
+      <div class="list-block-label">
+        서브당을 고를 수 있습니다.
+      </div>
+
+      <div class="list-block-label">
+        <% Subdang.all.each do |subdang| %>
+          <div class="chip">
+            <div class="chip-label">
+              <%= subdang.name %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <ul>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-input">
+                <%= f.association :subdang, label: false, prompt: '없음' %>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="list-block">
+      <%= f.hidden_field :photo_id %>
+      <%= f.hidden_field :question_type %>
+      <%= f.button :submit, "등록", class: 'button button-big button-fill', data: { disable_with: 'Saving...' } %>
+    </div>
+  </div>
+<% end %>

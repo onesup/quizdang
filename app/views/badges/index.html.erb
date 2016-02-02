@@ -1,0 +1,36 @@
+<% content_for :metatag do %>
+  <% cache('badges/metatag') do %>
+    <title><%= t('site_name') %> | <%= Badge.model_name.human %></title>
+    <%= tag :meta, property: "description", content: Badge.actived.pluck(:name).join(',') %>
+    <%= tag :meta, property: "keywords", content: Badge.actived.pluck(:name).join(',') %>
+
+    <%= tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"] %>
+    <%= tag :meta, property: "og:type", content: "website" %>
+    <%= tag :meta, property: "og:site_name", content: t('site_name') %>
+    <%= tag :meta, property: "og:title", content: Badge.model_name.human %>
+    <%= tag :meta, property: "og:url", content: badges_url %>
+    <%= tag :meta, property: "og:description", content: Badge.actived.pluck(:name).join(',') %>
+    <%#= tag :meta, property: "og:image", content: image_path("quizdang_logo.png") %>
+
+    <link rel="canonical" href="<%= badges_url %>" />
+  <% end %>
+<% end %>
+
+<%= render layout: 'shared/navbar' do %>
+  <%= Badge.model_name.human %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content">
+    <div class="content-block-title">
+      <%= t 'badges.index.description' %>
+      <%#= t 'badges.index.description_html', href: link_to('reputation', page_path('whats-reputation')) %>
+    </div>
+
+    <div class="list-block media-list">
+      <ul>
+        <%= render @badges %>
+      </ul>
+    </div>
+  </div>
+<% end %>

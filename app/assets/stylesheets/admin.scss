@@ -1,0 +1,25 @@
+/*
+ *= require bootstrap_and_overrides
+ *= require admin-lte/AdminLTE
+ *= require admin-lte/skins/skin-blue
+ *= require font-awesome
+ *= require_self
+ */
+
+// override adminLTE style(icheck)
+.checkbox, .radio {
+  padding-left: 20px;
+}
+
+.alert {
+  border-radius: 0px;
+}
+
+.nested-fields {
+  margin-bottom: 20px;
+}
+
+.profiler-results.profiler-left {
+  top: initial;
+  bottom: 0px;
+}

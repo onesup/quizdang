@@ -1,0 +1,22 @@
+<tr>
+  <td><%= user.id %></td>
+  <td><%= image_tag user.avatar.url, width: 50, height: 50 %></td>
+  <td><%= user.name %></td>
+  <td><%= link_to user.username, [:admin, user] %></td>
+  <td><%= user.email %></td>
+  <td><%= user.created_at %></td>
+  <td><%= user.updated_at %></td>
+  <td>
+    <div class="dropdown">
+      <a class="dropdown-toggle btn btn-sm btn-flat btn-danger" data-toggle="dropdown" href="#">
+        actions
+        <b class="caret"></b>
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><%= link_to 'Edit', edit_admin_quiz_path(user) %></li>
+        <li><%= link_to "Add #{Question}", new_admin_quiz_question_path(user) %></li>
+      </ul>
+    </div>
+  </td>
+</tr>

@@ -1,0 +1,29 @@
+<div class="list-block inset">
+  <%= simple_form_for @user, remote: true do |f| %>
+    <ul>
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-name"></i></div>
+          <div class="item-inner">
+            <div class="item-input">
+              <%= f.input_field :name %>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-email"></i></div>
+          <div class="item-inner">
+            <div class="item-input">
+              <%= f.input_field :email, as: :email %>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <%= f.button :submit, class: 'button button-big button-fill', data: { disable_with: 'Saving...' } %>
+  <% end %>
+</div>

@@ -1,0 +1,17 @@
+Rails:
+  Enabled: true
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'db/**/*'
+    - 'frontend/**/*'
+    # - 'config/**/*'
+    # - 'script/**/*'
+    # - !ruby/regexp /old_and_unused\.rb$/
+    #
+# Metrics/LineLength:
+  # Max: 99
+Metrics/LineLength:
+  Enabled: false

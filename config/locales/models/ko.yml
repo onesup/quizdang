@@ -1,0 +1,92 @@
+ko:
+  activerecord:
+    models:
+      subdang: '서브당'
+      question: '퀴즈'
+      hashtag: '태그'
+      badge: '휘장'
+      user: '유저'
+      photo: '포토'
+      participant: '참가'
+      answer: '해설'
+      comment: '댓글'
+      ticket: '문의하기'
+
+    attributes:
+      user:
+        login: "Handle"
+
+    errors:
+      models:
+        question:
+          attributes:
+            text:
+              blank: '내용을 입력해 주세요.'
+              too_short: "최소 %{count}자 이상 이여야 합니다."
+              too_long: "최대 %{count}자 이하 이여야 합니다."
+            options:
+              wrong_length: "답변은 2개만 가능합니다."
+              too_short: "답변은 최소 %{count}개 이상 이여야 합니다."
+              too_long: "답변은 최대 %{count}개까지 가능합니다."
+              options_invalid: "정답을 선택해주세요."
+
+        option:
+          attributes:
+            text:
+              blank: '내용을 입력해 주세요.'
+
+        participant:
+          attributes:
+            text:
+              blank: '내용을 입력해 주세요.'
+
+        user:
+          attributes:
+            email:
+              blank: "이메일 주소를 입력해 주세요."
+              invalid: "이메일 주소를 올바르게 입력해 주세요."
+              taken: "이미 등록된 회원입니다."
+              exclusion: '서비스 이용이 정지된 이메일 주소입니다. 자세한 사항은 고객센터로 문의주세요.'
+            username:
+              blank: "아이디를 입력해 주세요."
+              invalid: '아이디는 문자, 숫자, ".", "-"과 "_"만 사용할 수 있습니다.'
+              too_long: "아이디는 %{count}자 이하여야 합니다."
+              too_short: "아이디 길이는 최소 3자, 최대 20자로 제한됩니다."
+              too_long: "아이디 길이는 최소 3자, 최대 20자로 제한됩니다."
+              taken: "이미 등록된 아이디입니다."
+              exclude: '___ 삭제된 계정의 아이디입니다.'
+            password:
+              blank: "비밀번호를 입력해 주세요."
+              invalid: "비밀번호를 올바르게 입력해 주세요."
+              too_short: "비빌번호는 최소 %{count}자 이상으로 입력해 주세요."
+              too_long: "비빌번호는 최대 %{count}자 이하로 입력해 주세요."
+
+            password_confirmation:
+              confirmation: "비밀번호가 일치하지 않습니다."
+              
+            terms_of_service:
+              accepted: "이용약관 및 개인정보 취급방침에 동의하셔야 합니다."
+
+        answer:
+          attributes:
+            text:
+              blank: '내용을 입력해 주세요.'
+              too_short: "최소 %{count}자 이상 이여야 합니다."
+
+        comment:
+          attributes:
+            text:
+              blank: '내용을 입력해 주세요.'
+
+        hashtag:
+          attributes:
+            name:
+              blank: '내용을 입력해 주세요.'
+
+        ticket:
+          attributes:
+            details:
+              blank: "내용을 입력해 주세요."
+            email_address:
+              blank: "이메일 주소를 입력해 주세요."
+              invalid: "이메일 주소를 올바르게 입력해 주세요."

@@ -1,0 +1,23 @@
+<% @answer ||= Answer.new %>
+<% if @answer.persisted? %>
+  <% url = answer_path(@answer) %>
+<% else %>
+  <% url = question_answers_path(question) %>
+<% end %>
+
+<%= simple_form_for @answer, url: url, remote: true, data: { behavior: 'sign_in' } do |f| %>
+  <ul>
+    <li class="align-top">
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-input">
+            <%= f.input_field :text, as: :text %>
+            <%= f.error :text %>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <%= f.button :submit, class: 'button button-fill', data: { disable_with: 'Saving...' } %>
+<% end %>

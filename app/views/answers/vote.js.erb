@@ -1,0 +1,12 @@
+<% if @answer.owner?(current_user) %>
+  App.f7.toast('<%= t('answers.owner') %>', '<div><i class="ti-lock"></i></div>', {}).show();
+<% else %>
+  <% template = j render @answer %>
+  $('.<%= dom_id @answer %>').replaceWith('<%= template %>');
+
+  <% if @answer.upvoted_by?(current_user) %>
+    App.f7.toast('+1', '<div><i class="ti-thumb-up"></i></div>', {}).show();
+  <% elsif @answer.downvoted_by?(current_user) %>
+    App.f7.toast('-1', '<div><i class="ti-thumb-down"></i></div>', {}).show();
+  <% end %>
+<% end %>

@@ -1,0 +1,56 @@
+<section class="content-header">
+  <h1>
+    <%= Photo %>
+    <small>Control panel</small>
+  </h1>
+
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to admin_root_path do %>
+        <i class="fa fa-dashboard"></i> Home
+      <% end %>
+    </li>
+
+    <li class="active"><%= Photo %></li>
+  </ol>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-info">
+        <div class="box-header">
+          <h3 class="box-title">
+            <%= Photo %>
+          </h3>
+        </div>
+
+        <div class="box-body table-responsive">
+          <table class='table table-bordered table-striped table-hover'>
+            <thead>
+              <%= render 'th' %>
+            </thead>
+
+            <tbody>
+              <%= render @photos %>
+            </tbody>
+          </table>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="dataTables_info" style="padding-top: 8px;">
+                <%= page_entries_info @photos %>
+              </div>
+            </div>
+
+            <div class="col-xs-6">
+              <div class="dataTables_paginate paging_bootstrap pull-right">
+                <%= paginate @photos, theme: 'twitter-bootstrap-3', pagination_class: "pagination pull-right" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

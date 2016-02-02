@@ -1,0 +1,53 @@
+<% content_for :metatag do %>
+  <% cache('intro/metatag') do %>
+    <title><%= t('site_name') %> | <%= t('.page_name') %></title>
+    <%= tag :meta, property: "description", content: "퀴즈를 검색해보세요." %>
+    <%= tag :meta, property: "keywords", content: "검색, search" %>
+
+    <%= tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"] %>
+    <%= tag :meta, property: "og:type", content: "website" %>
+    <%= tag :meta, property: "og:site_name", content: t('site_name') %>
+    <%= tag :meta, property: "og:title", content: t('.page_name') %>
+    <%= tag :meta, property: "og:url", content: search_url %>
+    <%= tag :meta, property: "og:description", content: "퀴즈를 검색해보세요." %>
+    <%#= tag :meta, property: "og:image", content: image_path("quizdang_logo.png") %>
+
+    <link rel="canonical" href="<%= search_url %>" />
+  <% end %>
+<% end %>
+
+<%= render layout: 'shared/navbar' do %>
+  <%= t('search.index.page_name') %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content infinite-scroll" data-distance="100">
+    <% if params[:q].present? %>
+      <% if @questions.count > 0 %>
+        <div class="content-block-title">
+          <div><%= t('search.index.result_html', q: params[:q]) %></div>
+        </div>
+
+        <div class="masonry-container">
+          <%= render partial: 'questions/question', collection: @questions, as: :question %>
+        </div>
+
+        <%= link_to_next_page @questions, '', id: 'next-page', class: 'next-page', params: { q: params[:q] } %>
+
+        <% if @questions.next_page %>
+          <div class="infinite-scroll-preloader">
+            <div class="preloader"></div>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="content-block-title">
+          <div><%= t('search.index.no_result_html', q: params[:q]) %></div>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="content-block-title">
+        <div><%= t('search.index.no_result_html', q: '"') %></div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,236 @@
+---
+question:
+- name: Altruist
+  description: First bounty you manually award on another person's question
+- name: Benefactor
+  description: First bounty you manually award on your own question
+- name: Curious
+  description: Ask a well-received question on 5 separate days, and maintain a positive
+    question record
+- name: Inquisitive
+  description: Ask a well-received question on 30 separate days, and maintain a positive
+    question record
+- name: Socratic
+  description: Ask a well-received question on 100 separate days, and maintain a
+    positive question record
+- name: Favorite Question
+  description: Question favorited by 25 users
+  active: true
+  level: silver
+- name: Stellar Question
+  description: Question favorited by 100 users
+  active: true
+  level: gold
+- name: Investor
+  description: First bounty you offer on another person's question
+- name: Nice Question
+  description: Question score of 10 or more
+  active: true
+  level: bronze
+- name: Good Question
+  description: Question score of 25 or more
+  active: true
+  level: silver
+- name: Great Question
+  description: Question score of 100 or more
+  active: true
+  level: gold
+- name: Popular Question
+  description: Question with 1,000 views
+  active: true
+  level: bronze
+- name: Notable Question
+  description: Question with 2,500 views
+  active: true
+  level: silver
+- name: Famous Question
+  description: Question with 10,000 views
+  active: true
+  level: gold
+- name: Promoter
+  description: First bounty you offer on your own question
+- name: Scholar
+  description: Ask a question and accept an answer
+- name: Student
+  description: First question with score of 1 or more
+- name: Tumbleweed
+  description: Asked a question with zero score, no answers, no comments, and low
+    views for a week
+answer:
+- name: Enlightened
+  description: First to answer and accepted with score of 10 or more
+- name: Explainer
+  description: Edit and answer 1 question (both actions within 12 hours, answer score
+    > 0)
+- name: Refiner
+  description: Edit and answer 50 questions (both actions within 12 hours, answer
+    score > 0)
+- name: Illuminator
+  description: Edit and answer 500 questions (both actions within 12 hours, answer
+    score > 0)
+- name: Generalist
+  description: Provide non-wiki answers of 15 total score in 20 of top 40 tags
+- name: Guru
+  description: Accepted answer and score of 40 or more
+- name: Nice Answer
+  description: Answer score of 10 or more
+- name: Good Answer
+  description: Answer score of 25 or more
+- name: Great Answer
+  description: Answer score of 100 or more
+- name: Populist
+  description: Highest scoring answer that outscored an accepted answer with score
+    of more than 10 by more than 2x
+- name: Reversal
+  description: Provide an answer of +20 score to a question of -5 score
+- name: Revival
+  description: Answer more than 30 days after a question was asked as first answer
+    scoring 2 or more
+- name: Necromancer
+  description: Answer a question more than 60 days later with score of 5 or more
+- name: Self-Learner
+  description: Answer your own question with score of 3 or more
+- name: Teacher
+  description: Answer a question with score of 1 or more
+- name: Tenacious
+  description: 'Zero score accepted answers: more than 5 and 20% of total'
+- name: Unsung Hero
+  description: 'e accepted answers: more than 10 and 25% of total'
+participation:
+- name: Autobiographer
+  description: Complete "About Me" section of user profile
+- name: Caucus
+  description: Visit an election during any phase of an active election and have
+    enough reputation to cast a vote
+- name: Constituent
+  description: Vote for a candidate in the final phase of an election
+- name: Commentator
+  description: Leave 10 comments
+- name: Pundit
+  description: Leave 10 comments with score of 5 or more
+- name: Enthusiast
+  description: Visit the site each day for 30 consecutive days. (Days are counted
+    in UTC.)
+- name: Fanatic
+  description: Visit the site each day for 100 consecutive days. (Days are counted
+    in UTC.)
+- name: Mortarboard
+  description: Earn at least 200 reputation (the daily maximum) in a single day
+  active: false
+  level: bronze
+- name: Epic
+  description: Earn 200 daily reputation 50 times
+  active: false
+  level: silver
+- name: Legendary
+  description: Earn 200 daily reputation 150 times
+  active: false
+  level: gold
+- name: Precognitive
+  description: Followed the Area 51 proposal for this site before it entered the
+    commitment phase
+- name: Beta
+  description: Voted 10 times, added 3 posts score > 0, and visited the site on 3
+    separate days during the private beta
+- name: Quorum
+  description: One post with score of 2 on meta
+- name: Convention
+  description: 10 posts with score of 2 on meta
+- name: Talkative
+  description: Post 10 messages, with 1 or more starred, in chat
+- name: Outspoken
+  description: Post 10 messages in chat starred by 10 different users
+- name: Yearling
+  description: Active member for a year, earning at least 200 reputation
+  active: false
+  level: silver
+- name: Bronze Badge
+  description: You must have a total score of 100 in at least 20 non-community wiki
+    answers to achieve this badge.
+- name: Silver Badge
+  description: You must have a total score of 400 in at least 80 non-community wiki
+    answers to achieve this badge.
+- name: Gold Badge
+  description: You must have a total score of 1000 in at least 200 non-community
+    wiki answers to achieve this badge.
+moderation:
+- name: Citizen Patrol
+  description: First flagged post
+- name: Deputy
+  description: Raise 80 helpful flags
+- name: Marshal
+  description: Raise 500 helpful flags
+- name: Civic Duty
+  description: Vote 300 or more times
+  active: true
+  level: silver
+- name: Cleanup
+  description: First rollback
+- name: Constable
+  description: Served as a pro-tem moderator for at least 1 year or through site
+    graduation
+- name: Sheriff
+  description: Served as an elected moderator for at least 1 year
+- name: Critic
+  description: First down vote
+  active: true
+  level: bronze
+- name: Custodian
+  description: Complete at least one review task. This badge is awarded once per
+    review type
+- name: Reviewer
+  description: Complete at least 250 review tasks. This badge is awarded once per
+    review type
+- name: Steward
+  description: Complete at least 1,000 review tasks. This badge is awarded once per
+    review type
+- name: Disciplined
+  description: Delete own post with score of 3 or higher
+- name: Editor
+  description: First edit
+- name: Strunk & White
+  description: Edit 80 posts
+- name: Copy Editor
+  description: Edit 500 posts (excluding own or deleted posts and tag edits)
+- name: Electorate
+  description: Vote on 600 questions and 25% or more of total votes are on questions
+- name: Excavator
+  description: Edit first post that was inactive for 6 months
+- name: Archaeologist
+  description: Edit 100 posts that were inactive for 6 months
+- name: Organizer
+  description: First retag
+- name: Peer Pressure
+  description: Delete own post with score of -3 or lower
+- name: Proofreader
+  description: Approve or reject 100 suggested edits
+- name: Sportsmanship
+  description: Up vote 100 answers on questions where an answer of yours has a positive
+    score
+- name: Suffrage
+  description: Use 30 votes in a day
+- name: Supporter
+  description: First up vote
+  active: true
+  level: bronze
+- name: Synonymizer
+  description: First approved tag synonym
+- name: Tag Editor
+  description: First tag wiki edit
+- name: Research Assistant
+  description: Edit 50 tag wikis
+- name: Taxonomist
+  description: Create a tag used by 50 questions
+- name: Vox Populi
+  description: Use the maximum 40 votes in a day
+other:
+- name: Analytical
+  description: Visited every section of the FAQ (retired)
+- name: Announcer
+  description: Share a link to a question later visited by 25 unique IP addresses
+- name: Booster
+  description: Share a link to a question later visited by 300 unique IP addresses
+- name: Publicist
+  description: Share a link to a question later visited by 1000 unique IP addresses
+- name: Informed
+  description: Read the entire tour page

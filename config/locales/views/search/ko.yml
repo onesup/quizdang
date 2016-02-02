@@ -1,0 +1,6 @@
+ko:
+  search:
+    index:
+      page_name: '검색'
+      result_html: '<span class="highlight">%{q}</span>에 대한 검색결과 입니다.'
+      no_result_html: '<span class="highlight">%{q}</span>에 대한 검색결과가 없습니다.'

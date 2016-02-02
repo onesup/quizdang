@@ -1,0 +1,7 @@
+<% if @question.valid? %>
+  // ignoreCache for edit/update(bypass dom cache)
+  App.mainView.router.load({ url: '<%= question_path(@question) %>', reload: true, ignoreCache: true });
+<% else %>
+    <% template = j render "questions/#{@question.question_type.underscore}/form" %>
+  $('.<%= dom_id @question, :edit %>').replaceWith('<%= template %>');
+<% end %>

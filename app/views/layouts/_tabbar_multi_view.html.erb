@@ -1,0 +1,60 @@
+<%
+  @questions = Question.all.desc_by_views.includes(:photo, :reputations).page(params[:page])
+  @hashtags = Hashtag.all.includes(:children)
+  @badges = Badge.actived.all
+  @photos = Photo.desc_by_votes.all
+  @users = User.by_karma
+%>
+
+<div class="views tabs toolbar-through">
+  <div id="view-main" class="view view-main active tab">
+    <%= render 'layouts/flash_message' %>
+    <%= yield %>
+  </div>
+
+  <div id="view-1" class="view view-1 tab">
+    <%= render template: 'questions/index' %>
+  </div>
+
+  <div id="view-2" class="view view-2 tab">
+    <%= render template: 'hashtags/index' %>
+  </div>
+
+  <div id="view-3" class="view view-3 tab">
+    <%= render template: 'badges/index' %>
+  </div>
+
+  <div id="view-4" class="view view-4 tab">
+    <%= render template: 'photos/index' %>
+  </div>
+
+  <div id="view-5" class="view view-5 tab">
+    <%= render template: 'users/index' %>
+  </div>
+
+  <%= render 'layouts/signin_popup' %>
+
+  <div class="toolbar tabbar tabbar-labels">
+    <div class="toolbar-inner">
+      <%= link_to '#view-1', class: "tab-link" do %>
+        <i class="icon ti-home"></i><span class="tabbar-label"><%= Question.model_name.human %></span>
+      <% end %>
+
+      <%= link_to '#view-2', class: "tab-link" do %>
+        <i class="icon ti-package"></i><span class="tabbar-label"><%= Hashtag.model_name.human %></span>
+      <% end %>
+
+      <%= link_to '#view-3', class: "tab-link" do %>
+        <i class="icon ti-crown"></i><span class="tabbar-label"><%= Badge.model_name.human %></span>
+      <% end %>
+
+      <%= link_to '#view-4', class: "tab-link" do %>
+        <i class="icon ti-gallery"></i><span class="tabbar-label"><%= Photo.model_name.human %></span>
+      <% end %>
+
+      <%= link_to '#view-5', class: "tab-link" do %>
+        <i class="icon ti-user"></i><span class="tabbar-label"><%= User.model_name.human %></span>
+      <% end %>
+    </div>
+  </div>
+</div>

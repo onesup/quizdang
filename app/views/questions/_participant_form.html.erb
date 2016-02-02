@@ -1,0 +1,25 @@
+<%= simple_form_for [question, @participant || Participant.new], url: question_participants_path(question), remote: true, data: { behavior: 'sign_in' } do |f| %>
+  <ul>
+    <% if question.owner?(current_user) %>
+      <%= render partial: 'participants/option', collection: question.options %>
+    <% else %>
+      <% if question.ox? %>
+        <% options = question.options %>
+      <% else %>
+        <% options = question.options.shuffle %>
+      <% end %>
+
+      <% options.each do |option| %>
+        <li>
+          <label class="label-radio item-content">
+            <%= f.radio_button(:option_id, option.id) %>
+
+            <div class="item-inner">
+              <div class="item-title"><%= option.text %></div>
+            </div>
+          </label>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>

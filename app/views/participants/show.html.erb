@@ -1,0 +1,18 @@
+<%= render layout: 'shared/navbar' do %>
+  <%= Participant.model_name.human %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content">
+    <%= render 'questions/question_with_answers', question: @question %>
+
+    <div class="user">
+      <% if @question.user %>
+        <%= render 'questions/author', user: @question.user %>
+      <% end %>
+    </div>
+
+    <%#= render 'answers' %>
+    <%= render 'comments' %>
+  </div>
+<% end %>

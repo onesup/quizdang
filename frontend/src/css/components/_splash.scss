@@ -1,0 +1,76 @@
+.splash {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-image: url("https://unsplash.imgix.net/uploads/14135967189272ee843f8/f9c22c58?fit=crop&fm=jpg&h=675&q=75&w=1050"); */
+  text-align: center;
+  color: #fff;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .island {
+    max-width: 40em;
+    margin: auto;
+    position: relative;
+    padding: 10% 10px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .splash--title {
+    /* text-transform: uppercase; */
+    /* letter-spacing: 3px; */
+    /* font-size: 2em; */
+    border: 2px solid #fff;
+    border-left: 0;
+    border-right: 0;
+    /* font-weight: 300; */
+  }
+
+  .splash--subtitle {
+    /* font-weight: 300; */
+    /* font-size: 1.25em; */
+    /* line-height: 1.875rem; */
+  }
+
+  a {
+    display: inline-block;
+    padding: 3px 0 3px 0;
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+
+    &:after {
+      content: '';
+      display: block;
+      margin: auto;
+      height: 3px;
+      width: 0px;
+      background: transparent;
+      transition: width 0.5s ease, background-color 0.5s ease;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+        background: #fff;
+      }
+    }
+  }
+}

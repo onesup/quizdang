@@ -1,0 +1,16 @@
+.navbar .left a + a,
+.navbar .right a + a {
+  margin-left: 0px;
+}
+
+.navbar a.icon-only,
+.toolbar a.icon-only,
+.subnavbar a.icon-only {
+  min-width: 33px;
+}
+
+.tabbar {
+  .icon {
+    font-size: 25px;
+  }
+}

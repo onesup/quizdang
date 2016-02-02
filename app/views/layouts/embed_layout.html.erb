@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <%= yield :metatag %>
+
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag %>
+    <%= favicon_link_tag 'icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+
+    <%= render 'layouts/rollbar' %>
+    <%= include_gon %>
+    <%= render 'layouts/browser_update' %>
+    <%= render 'layouts/google_analytics' %>
+    <%= render 'layouts/facebook' %>
+  </head>
+  <body class="theme-red data-no-turbolink">
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+
+    <div class="views">
+      <div class="view view-main">
+        <%= yield %>
+      </div>
+    </div>
+
+    <%= render 'layouts/signin_popup' %>
+
+    <%= javascript_include_tag 'embed' %>
+
+    <script>
+      $('a').addClass('external');
+      $('a').attr('target', '_blank');
+    </script>
+  </body>
+</html>

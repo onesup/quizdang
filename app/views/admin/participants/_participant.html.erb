@@ -1,0 +1,18 @@
+<tr>
+  <td><%= participant.id %></td>
+  <td><%= link_to participant.question.text, [:admin, participant.question] %></td>
+  <td><%= participant.option.text %></td>
+  <td><%= participant.created_at %></td>
+  <td><%= participant.updated_at %></td>
+  <td>
+    <div class="dropdown">
+      <a class="dropdown-toggle btn btn-sm btn-flat btn-danger" data-toggle="dropdown" href="#">
+        actions
+        <b class="caret"></b>
+      </a>
+
+      <ul class="dropdown-menu">
+      </ul>
+    </div>
+  </td>
+</tr>

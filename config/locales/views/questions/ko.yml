@@ -1,0 +1,7 @@
+ko:
+  questions:
+    # owner: 본인 퀴즈에 투표는 안돼요^^
+    owner: 본인 퀴즈잖아요^^
+
+    index:
+      page_name: '모든 퀴즈'

@@ -1,0 +1,23 @@
+<%= render layout: 'shared/navbar' do %>
+  <%= Photo.model_name.human %>
+<% end %>
+
+<%= render layout: 'shared/page' do %>
+  <div class="page-content infinite-scroll" data-distance="100">
+    <div class="content-block">
+      <p><%= t 'photos.index.description_html' %></p>
+
+      <div class="masonry-container">
+        <%= render @photos %>
+      </div>
+
+      <%= link_to_next_page @photos, '', id: 'next-page', class: 'next-page' %>
+
+      <% if @photos.next_page %>
+        <div class="infinite-scroll-preloader">
+          <div class="preloader"></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

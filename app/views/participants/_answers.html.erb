@@ -1,0 +1,13 @@
+<div class="content-block-title">
+  <%= Answer.model_name.human %>
+</div>
+
+<div class="list-block media-list question-answers <%= dom_id(@question) %>">
+  <div id="answers" class="answers">
+    <%= render @question.answers.desc_by_votes.includes(:user) %>
+  </div>
+
+  <div class="list-block inset new-answer">
+    <%= render 'answers/form', question: @question %>
+  </div>
+</div>
