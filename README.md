@@ -1,4 +1,4 @@
-# 퀴즈당(quizdang)
+# 퀴즈당(quizdang) [![Build Status](https://travis-ci.org/kimsuelim/quizdang.svg?branch=master)](https://travis-ci.org/kimsuelim/quizdang)
 
 <img src="https://www.quizdang.com/assets/icon-b3d61be85a1232ad3149d49c55cbf76719984f9ac93ff126b553001f50885cc2.png" width="100" align="right">
 
