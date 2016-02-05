@@ -21,7 +21,7 @@ gem 'rack-attack'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
-gem 'turbolinks', github: 'rails/turbolinks'
+gem 'turbolinks', '~> 5.0.0.beta'
 gem 'bootstrap-sass', '~> 3.3.0'
 gem 'font-awesome-rails'
 
