@@ -39,16 +39,11 @@ class QuestionTest < ActiveSupport::TestCase
       question.errors[:text].any?.must_equal true
     end
 
-    it 'question_type must be presence' do
+    it 'Unknown question type' do
       question.question_type = nil
-      question.invalid?.must_equal true
-      question.errors[:question_type].any?.must_equal true
-    end
-
-    it 'question_type must be inclusion' do
-      question.question_type = 'foobar'
-      question.invalid?.must_equal true
-      question.errors[:question_type].any?.must_equal true
+      proc {
+        question.invalid?.must_equal true
+      }.must_raise RuntimeError
     end
 
     it 'photo must be presence' do
