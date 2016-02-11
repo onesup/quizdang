@@ -2,8 +2,10 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 def create_users
-  User.create_with_identicon!(name: '퀴즈당', username: 'quizdang', password: Devise.friendly_token).add_role(:admin)
-  User.create_with_identicon!(name: 'lim', username: 'lim', password: Devise.friendly_token)
+  if User.all.empty?
+    User.create_with_identicon!(name: '퀴즈당', username: 'quizdang', password: Devise.friendly_token).add_role(:admin)
+    User.create_with_identicon!(name: 'lim', username: 'lim', password: Devise.friendly_token)
+  end
 end
 
 def create_badges
@@ -26,7 +28,7 @@ def create_hashtags
     data['children'].try(:each) do |subdata|
       hashtag.children.create!(name: subdata['name'], user: User.admins.sample)
     end
-  end
+  end if Hashtag.all.empty?
 end
 
 def create_subdangs
@@ -36,7 +38,7 @@ def create_subdangs
     data['children'].try(:each) do |subdata|
       subdang.children.create!(name: subdata['name'], remote_featured_image_url: subdata['featured_image'], user: User.admins.sample)
     end
-  end
+  end if Subdang.all.empty?
 end
 
 def create_pixabay_photos
@@ -193,7 +195,11 @@ create_questions('question.yml')
 
 if Rails.env.development?
   create_dummy_users
-  create_questions('question_extra.yml')
+  begin
+    create_questions('question_extra.yml')
+  rescue Errno::ENOENT
+    puts 'you need question_extra.yml'
+  end
   create_participants
   create_answers
   create_comments
