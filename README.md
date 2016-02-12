@@ -23,7 +23,7 @@ This README would normally document whatever steps are necessary to get the appl
 
 brew 또는 apt-get으로 개발에 필요한 패키지 설치
 
-* mysql ~>5.7.10
+* mysql ~>5.7.11(show_compatibility_56 = on)
 * redis ~>3.3.0
 * memcached ~>1.4.24
 * node.js ~>4.2.6
