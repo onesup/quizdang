@@ -6,11 +6,11 @@
 #  name        :string(255)      not null
 #  description :text(65535)      not null
 #  slug        :string(255)      not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
 #  kind        :integer          not null
 #  level       :integer          not null
 #  active      :boolean          default(FALSE), not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 class Badge < ActiveRecord::Base
