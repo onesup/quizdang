@@ -11,8 +11,6 @@
 // about supported directives.
 //
 // require turbolinks
-//= require framework7/framework7
-
 //= require frontend/js/vendor
 //= require frontend/js/app
 //= require_self

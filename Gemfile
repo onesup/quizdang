@@ -118,6 +118,4 @@ end
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-admin-lte'
-  gem 'rails-assets-framework7'
-  gem 'rails-assets-normalize-css'
 end

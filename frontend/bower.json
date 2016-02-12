@@ -4,9 +4,8 @@
     "framework7": "^1.4.0",
     "toast-for-framework7": "git@github.com:valnub/Toast-for-Framework7.git",
 
-    "jquery-rails": "git@github.com:rails/jquery-rails.git",
+    "jquery-ujs": "^1.2.0",
     "turbolinks": "git@github.com:turbolinks/turbolinks.git",
-    "cocoon": "git@github.com:nathanvda/cocoon.git",
 
     "normalize.css": "^3.0.3",
     "offline": "^0.7.15",

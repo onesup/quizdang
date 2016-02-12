@@ -302,8 +302,6 @@ GEM
       railties (= 4.2.5.1)
       sprockets-rails
     rails-assets-admin-lte (2.3.2)
-    rails-assets-framework7 (1.4.0)
-    rails-assets-normalize-css (3.0.3)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -488,8 +486,6 @@ DEPENDENCIES
   rack-attack
   rails (= 4.2.5.1)
   rails-assets-admin-lte!
-  rails-assets-framework7!
-  rails-assets-normalize-css!
   rails-i18n
   rolify
   rollbar

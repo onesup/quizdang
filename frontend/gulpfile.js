@@ -1,28 +1,29 @@
 var gulp = require('gulp');
-var concat = require('gulp-concat');
-var sourcemaps = require('gulp-sourcemaps');
 var babel = require('gulp-babel');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
+var sourcemaps = require('gulp-sourcemaps');
+var jshint = require('gulp-jshint');
+var plumber = require('gulp-plumber');
 
 var paths = {
   js: 'src/js/**/*.js',
   venderJS: [
-    // 'bower_components/framework7/dist/js/framework7.js',
+    'bower_components/framework7/dist/js/framework7.js',
     'bower_components/toast-for-framework7/toast.js',
 
     'bower_components/jquery/dist/jquery.js',
-    'bower_components/jquery-rails/vendor/assets/javascripts/jquery_ujs.js',
-    // 'bower_components/cocoon/app/assets/javascripts/cocoon.js',
+    'bower_components/jquery-ujs/src/rails.js',
     'bower_components/offline/offline.js',
     'bower_components/fingerprintjs2/fingerprint2.js',
     'bower_components/jquery.cookie/jquery.cookie.js',
   ],
   css: 'src/css/**/*.scss',
   venderCSS: [
-    // 'bower_components/normalize.css/normalize.css',
-    // 'bower_components/framework7/dist/css/framework7.ios.css',
-    // 'bower_components/framework7/dist/css/framework7.ios.colors.css',
+    'bower_components/normalize.css/normalize.css',
+    'bower_components/framework7/dist/css/framework7.ios.css',
+    'bower_components/framework7/dist/css/framework7.ios.colors.css',
     'bower_components/toast-for-framework7/toast.css',
     'bower_components/offline/themes/offline-language-english.css',
     'bower_components/offline/themes/offline-theme-chrome.css',
@@ -41,8 +42,11 @@ gulp.task('clean', function() {
 
 gulp.task('js', function() {
   return gulp.src(paths.js)
+  .pipe(plumber())
   .pipe(sourcemaps.init())
   .pipe(babel())
+  .pipe(jshint())
+  .pipe(jshint.reporter('jshint-stylish'))
   .pipe(concat('app.js'))
   .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest('dist/js'));
@@ -56,18 +60,26 @@ gulp.task('vendorjs', function() {
 
 gulp.task('css', function() {
   gulp.src(paths.css)
+  .pipe(sourcemaps.init())
   .pipe(sass().on('error', sass.logError))
-  .pipe(concat('app.css'))
   .pipe(autoprefixer({
-    browsers: ['last 2 versions'],
-    cascade: false
+    browsers: ['> 1% in KR', 'last 2 versions'],
+    cascade: false,
   }))
+  .pipe(concat('app.css'))
+  .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('vendorcss', function() {
   gulp.src(paths.venderCSS)
+  .pipe(sourcemaps.init())
+  .pipe(autoprefixer({
+    browsers: ['> 1% in KR', 'last 2 versions'],
+    cascade: false,
+  }))
   .pipe(concat('vendor.css'))
+  .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest('dist/css'));
 });
 
