@@ -2,7 +2,7 @@
   <% unless Rails.env.development? %>
     <script>
       var _rollbarConfig = {
-        accessToken: 'cee4b1795c5d4dcab81b5524a568c07d',
+        accessToken: ENV['ROLLBAR_ACCESS_TOKEN'],
         captureUncaught: true,
         payload: {
           environment: '<%= Rails.env %>',
